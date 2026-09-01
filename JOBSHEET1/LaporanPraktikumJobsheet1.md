@@ -42,12 +42,12 @@ Terakhir adalah halaman form untuk menambahkan daftar anggota. Struktur pada hal
 
 ### Latihan Reflektif 6.5
 1. Kenapa field "Alamat" dan "No. HP" tidak diberi required sedangkan "Nama" dan "No. Anggota" diberi?
-> Hal ini dikarenakan Alaman dan No. HP tidak wajib diisi. Untuk menambahkan diri hanya perlu Nomor Anggota dan Nama saja cukup.
+`Hal ini dikarenakan Alaman dan No. HP tidak wajib diisi. Untuk menambahkan diri hanya perlu Nomor Anggota dan Nama saja cukup.`
 2. Apa yang akan terjadi (di browser) kalau kamu klik tombol "Simpan" tanpa mengisi field "Nama"? Coba buka filenya di browser dan praktikkan.
-> Jika mencoba hal tersebut maka pada web akan menunjukan bahwa field tersebut wajib untuk diisi. Pada aksi nyata (jika sudah ada backend nya), maka form tidak akan terkirim.
-(![alt text](image.png))
+`Jika mencoba hal tersebut maka pada web akan menunjukan bahwa field tersebut wajib untuk diisi. Pada aksi nyata (jika sudah ada backend nya), maka form tidak akan terkirim.`
+![alt text](image.png)
 3. Form ini juga belum punya action pada tag <form>-nya — apa dampaknya saat tombol "Simpan" ditekan?
-> Karena belum ada action, maka saat ditekan "Simpan" hanya akan mereload halaman lagi.
+`Karena belum ada action, maka saat ditekan "Simpan" hanya akan mereload halaman lagi.`
 
 ## Kesimpulan 
 Pada jobsheet 1 ini, saya belajar terkait kerangka utama saat membuat web. Kerangka tersebut berupa header, navigasi (nav), main, dan juga footer. Selain itu saya juga belajar cara membuat tabel data serta membuat form isian. 
