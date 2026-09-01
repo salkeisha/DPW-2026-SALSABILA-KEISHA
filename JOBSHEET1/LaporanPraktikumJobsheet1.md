@@ -44,7 +44,7 @@ Terakhir adalah halaman form untuk menambahkan daftar anggota. Struktur pada hal
 1. Kenapa field "Alamat" dan "No. HP" tidak diberi required sedangkan "Nama" dan "No. Anggota" diberi?
 `Hal ini dikarenakan Alaman dan No. HP tidak wajib diisi. Untuk menambahkan diri hanya perlu Nomor Anggota dan Nama saja cukup.`
 2. Apa yang akan terjadi (di browser) kalau kamu klik tombol "Simpan" tanpa mengisi field "Nama"? Coba buka filenya di browser dan praktikkan.
-`Jika mencoba hal tersebut maka pada web akan menunjukan bahwa field tersebut wajib untuk diisi. Pada aksi nyata (jika sudah ada backend nya), maka form tidak akan terkirim.`
+`Jika mencoba hal tersebut maka pada web akan menunjukan bahwa field tersebut wajib untuk diisi. Pada aksi nyata (jika sudah ada backend nya), maka form tidak akan terkirim.` <br>
 ![alt text](image.png)
 3. Form ini juga belum punya action pada tag <form>-nya — apa dampaknya saat tombol "Simpan" ditekan?
 `Karena belum ada action, maka saat ditekan "Simpan" hanya akan mereload halaman lagi.`
