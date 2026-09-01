@@ -41,14 +41,15 @@ Selain terdapat halaman daftar buku yag ada, juga terdapat halaman untuk menampi
 Terakhir adalah halaman form untuk menambahkan daftar anggota. Struktur pada halaman ini kurang lebih juga sama dengan struktur halaman form tambah daftar buku sebelumnya. Dikarenakan pada index awal hanya ada navigasi ke 4 halaman (Beranda, Daftar Buku, Tambah Buku, dan Daftar Anggota) maka dengan adanya halaman ini, terjadi penambahan navigasi (header) di seluruh halaman termasuk halaman ini sendiri.
 
 ### Latihan Reflektif 6.5
-1. Kenapa field "Alamat" dan "No. HP" tidak diberi required sedangkan "Nama" dan "No. Anggota" diberi?
+1. Kenapa field "Alamat" dan "No. HP" tidak diberi required sedangkan "Nama" dan "No. Anggota" diberi? <br>
 `Hal ini dikarenakan Alaman dan No. HP tidak wajib diisi. Untuk menambahkan diri hanya perlu Nomor Anggota dan Nama saja cukup.`
-2. Apa yang akan terjadi (di browser) kalau kamu klik tombol "Simpan" tanpa mengisi field "Nama"? Coba buka filenya di browser dan praktikkan.
+2. Apa yang akan terjadi (di browser) kalau kamu klik tombol "Simpan" tanpa mengisi field "Nama"? Coba buka filenya di browser dan praktikkan. <br>
 `Jika mencoba hal tersebut maka pada web akan menunjukan bahwa field tersebut wajib untuk diisi. Pada aksi nyata (jika sudah ada backend nya), maka form tidak akan terkirim.` <br>
 ![alt text](image.png)
-3. Form ini juga belum punya action pada tag <form>-nya — apa dampaknya saat tombol "Simpan" ditekan?
+3. Form ini juga belum punya action pada tag <form>-nya — apa dampaknya saat tombol "Simpan" ditekan? <br>
 `Karena belum ada action, maka saat ditekan "Simpan" hanya akan mereload halaman lagi.`
 
 ## Kesimpulan 
 Pada jobsheet 1 ini, saya belajar terkait kerangka utama saat membuat web. Kerangka tersebut berupa header, navigasi (nav), main, dan juga footer. Selain itu saya juga belajar cara membuat tabel data serta membuat form isian. 
+
 
