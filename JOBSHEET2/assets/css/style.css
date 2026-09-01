@@ -62,3 +62,30 @@ header nav a {
     color: #fff;
     font-weight: 500;
 }
+
+/* Main Layout */
+main {
+    max-width: 1000px;
+    /* auto berarti sistem akan menengahkan elemen secara horizontal */
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    /* Latar putih untuk setiap section */
+    background-color: #fff;
+    /* Sudut kotak melengkung */
+    border-radius: 8px;
+    /* jika satu nilai aja berarti untuk semua (atas bawah kanan kiri sama) */
+    padding: 1.5rem;
+    /* jarak bawah tiap kartu */
+    margin-bottom: 1.5rem;
+    /* buat bayangan tiap kartu, 0: untuk kanan/kirinya, 1px: untuk jarak bayangan bawahnya dari kartu, 3px: blurnya */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Untuk setiap judul dalam section */
+section h2 {
+    margin-bottom: 1rem;
+    color: #1d5b8a;
+}
