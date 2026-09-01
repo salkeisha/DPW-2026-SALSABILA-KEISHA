@@ -28,3 +28,37 @@ a:hover {
     text-decoration: underline;
 }
 
+header {
+    background-color: #1d5b8a;
+    color: #fff;
+    /* nilai pertama: atas-bawah, nilai kedua: kanan-kiri */
+    padding: 1rem 1.5rem;
+    /* Flex mengubah agar anak dari header menjadi flex container dan tersusun secara horizontal */
+    display: flex;
+    /* Menyejajarkan flex item secara vertikan di tengah meski tinggi berbeda */
+    align-items: center;
+    /* Mendorong item pertama menempel di ujung kiri dan item terakhir di ujung kanan */
+    justify-content: space-between;
+    /* Mengizinkan flex item pindah ke baris baru kalau ruang tidak cukup */
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.4rem;
+}
+
+/* Untuk menyusun item-item menu */
+header nav ul {
+    /* Mengapus titik per item */
+    list-style: none;
+    /* Menu menjadi horizontal */
+    display: flex;
+    /* Memberi jarak seragam antar item */
+    gap: 1.25;
+}
+
+/* Menimpa warna tautan bawaan khusus untuk tautan yang ada di navbar */
+header nav a {
+    color: #fff;
+    font-weight: 500;
+}
