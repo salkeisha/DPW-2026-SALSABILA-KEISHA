@@ -6,9 +6,25 @@
 
 /* Gaya Dasar */
 body {
+    /* font diurutkan berdasarkan prioritas */
     font-family: 'Segoe UI', Arial, sans-serif;
+    /* Warna Teks */
     color: #2b2b2b;
+    /* Warna Background/Latar Belakang */
     background-color: #f5f6f8;
+    /* Jarak antar teks */
     line-height: 1.5;
+}
+
+/* Semua tautan diberi warna biru (menggantikan warna biru browser */
+a {
+    color: #1d5b8a;
+    /* Menghilangkan underline dari tautan agar bersih */
+    text-decoration: none;
+}
+
+/* Agar underline baru muncul saat diarahkan ke atas tautan */
+a:hover {
+    text-decoration: underline;
 }
 
