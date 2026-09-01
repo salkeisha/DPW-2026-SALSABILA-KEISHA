@@ -122,3 +122,61 @@ main section:nth-of-type(2) article p {
     font-weight: 700;
     color: #1d5b8a;
 }
+
+/* Tabel */
+table {
+    /* lebar tabel, tabel melebar memenuhi kotaknya */
+    width: 100%;
+    /* agar baris antar batas antar sel digabung menjadi satu */
+    border-collapse: collapse;
+}
+
+/* diterapkan ke kedua jenis sel sekaligus */
+th, td {
+    /* rata kiri karena set awal th biasanya rata tengah */
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    /* garis tipis di bagian bawah tiap sel */
+    border-bottom: 1px solid #e2e6ea;
+}
+
+/* header tabel */
+thead {
+    background-color: #1d5b8a;
+    color: #fff;
+}
+
+/* khusus baris genap */
+tbody tr:nth-child(even) {
+    background-color: #f7f9fb;
+}
+
+/* saat kursor diarahkan ke sebuah baris maka baris berubah warnanya */
+tbody tr:hover {
+    background-color: #eef4fa;
+}
+
+/* untuk tombol edit dan hapus */
+td button {
+    padding: 0.35rem 0.7rem;
+    /* jarak kanan tiap tombol agar tidak aling menempel */
+    margin-right: 0.35rem;
+    /* menghapus border bawaan html */
+    border: none;
+    border-radius: 4px;
+    /* mengubah bentuk kursor menjadi ikon tangan menunjuk saat diatas tombol */
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/* tombol pertama */
+td button:first-of-type {
+    background-color: #f0ad4e;
+    color: #fff;
+}
+
+/* tombol terakhir */
+td button:last-of-type {
+    background-color: #d9534f;
+    color: #fff;
+}
