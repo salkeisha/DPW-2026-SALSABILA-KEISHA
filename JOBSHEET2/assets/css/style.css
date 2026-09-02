@@ -18,7 +18,7 @@ body {
 
 /* Semua tautan diberi warna biru (menggantikan warna biru browser */
 a {
-    color: #1d5b8a;
+    color: #530a0b;
     /* Menghilangkan underline dari tautan agar bersih */
     text-decoration: none;
 }
@@ -29,7 +29,7 @@ a:hover {
 }
 
 header {
-    background-color: #1d5b8a;
+    background-color: #530a0b;
     color: #fff;
     /* nilai pertama: atas-bawah, nilai kedua: kanan-kiri */
     padding: 1rem 1.5rem;
@@ -54,7 +54,7 @@ header nav ul {
     /* Menu menjadi horizontal */
     display: flex;
     /* Memberi jarak seragam antar item */
-    gap: 1.25;
+    gap: 1.25rem;
 }
 
 /* Menimpa warna tautan bawaan khusus untuk tautan yang ada di navbar */
@@ -87,7 +87,7 @@ section {
 /* Untuk setiap judul dalam section */
 section h2 {
     margin-bottom: 1rem;
-    color: #1d5b8a;
+    color: #530a0b;
 }
 
 /* Kartu Statistik */
@@ -96,9 +96,13 @@ main section:nth-of-type(2) {
     /* anak-anaknya langsung jadi grid */
     display: grid;
     /* 3 kolom lebarnya sama-sama 1fr */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     /* jarak antar kolom */
     gap: 1rem;
+}
+
+main section:nth-of-type(2) h2 {
+  grid-column: 1 / -1; 
 }
 
 /* styling setiap kartu (tiap article) */
@@ -120,7 +124,7 @@ main section:nth-of-type(2) article h3 {
 main section:nth-of-type(2) article p {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1d5b8a;
+    color: #530a0b;
 }
 
 /* Tabel */
@@ -142,7 +146,7 @@ th, td {
 
 /* header tabel */
 thead {
-    background-color: #1d5b8a;
+    background-color: #530a0b;
     color: #fff;
 }
 
@@ -170,13 +174,28 @@ td button {
 }
 
 /* tombol pertama */
-td button:first-of-type {
+/* td button:first-of-type {
+    background-color: #f0ad4e;
+    color: #fff;
+} */
+
+/* tombol terakhir */
+/* td button:last-of-type {
+    background-color: #d9534f;
+    color: #fff;
+} */
+
+td button.btn-edit {
     background-color: #f0ad4e;
     color: #fff;
 }
 
-/* tombol terakhir */
-td button:last-of-type {
+td button.btn-detail {
+    background-color: #d2a510;
+    color: #fff;
+}
+
+td button.btn-hapus {
     background-color: #d9534f;
     color: #fff;
 }
@@ -210,7 +229,7 @@ form select {
 
 /* tombol submit */
 form button[type="submit"] {
-    background-color: #1d5b8a;
+    background-color: #530a0b;
     color: #fff;
     border: none;
     padding: 0.6rem 1,5rem;
