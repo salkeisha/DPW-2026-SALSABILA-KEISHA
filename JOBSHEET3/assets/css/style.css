@@ -252,3 +252,22 @@ footer {
     color: #7a8794;
     font-size: 0.9rem;
 }
+
+/* Hamburger Menu (checkbox hack) */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none; /* disembunyikan di layar besar */
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Tabel Responsif  */
+.table-responsive {
+    overflow-x: auto;
+}
+
+
