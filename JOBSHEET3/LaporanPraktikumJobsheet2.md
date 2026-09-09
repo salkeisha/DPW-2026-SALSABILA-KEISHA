@@ -22,19 +22,9 @@ Dari jobsheet ini terdapat beberapa hal baru tentang CSS yang bisa digunakan unt
 - `overflow-x: auto` merupakan pola umum untuk menangani tabel/konten lebar di layar sempit tanpa merusak tata letak halaman lain.
 
 ## 3. Modifikasi 🖌️
-1. Merubah warna awal yaitu `#1d5b8a` menjadi `#530a0b`, menggunakan warna merah tua.
-2. Menambah kolom keempat di grid kartu statistik,sehingga terdapat 4 kartu statistik.
-3. Membuat tombol detail di antara edit dan hapus, lalu merubah warnanya agar sesuai. Hal ini dilakukan dengan merubah file html sehingga tiap tombol diberi class dan mereferensikan class tiap button di css nya agar memiliki warna yang berbeda.
-
-### Sebelum dimodifikasi : 
-![Beranda](<Screenshot 2026-09-02 222453.png>) <br>
-![Daftar Buku](<Screenshot 2026-09-02 222502.png>) 
-
-### Setelah dimodifikasi :
-![Beranda](<Screenshot 2026-09-02 230137.png>) <br>
-![Daftar Buku](<Screenshot 2026-09-02 230144.png>)
+1. Menambahkan breakpoint baru dengan `main { max-width: 1000px; }` agar dapat dilihat di layar yang sangat lebar.
+2. Mengubah breakpoint tablet ke 900px.
 
 ## 4. Kesimpulan ✒️
-Kombinasi teknik CSS modern mempermudah pembuatan layout web yang rapi dan terstruktur. Langkah seperti CSS Reset terbukti krusial untuk menyeragamkan tampilan bawaan antar browser. Untuk tata letaknya, penggunaan Flexbox sangat efisien dalam meratakan elemen satu dimensi seperti navbar, sedangkan CSS Grid jauh lebih praktis untuk membagi ruang secara presisi pada elemen dua dimensi seperti kumpulan kartu statistik. Selain urusan tata letak, penambahan styling visual pada tabel dan form membuktikan bagaimana CSS berperan besar dalam meningkatkan kenyamanan baca pengguna (UI/UX). Terakhir, dari penyelesaian masalah pada tombol aksi di tabel, terbukti bahwa penggunaan class selector yang spesifik jauh lebih aman dan direkomendasikan ketimbang mengandalkan urutan elemen bawaan (pseudo-class), sehingga desain web tidak rusak saat ada penambahan atau perubahan elemen di masa depan.
-
+Kesimpulan dari praktikum Jobsheet 3 ini adalah penerapan Responsive Web Design sangat penting agar layout web bisa menyesuaikan dengan berbagai ukuran layar. Pembuatan desain ini bergantung pada tag `<meta name="viewport">` sebagai dasar utamanya dan penggunaan Media Queries di CSS untuk mengatur breakpoint. Praktikum ini juga menunjukkan kalau fitur interaktif bisa dibuat menggunakan CSS murni saja tanpa bantuan JavaScript. Contoh penerapannya adalah pembuatan navigasi hamburger menu dengan teknik checkbox hack dan penanganan tabel responsif, sehingga tampilan UI/UX tetap rapi saat diakses dari layar yang kecil.
 
