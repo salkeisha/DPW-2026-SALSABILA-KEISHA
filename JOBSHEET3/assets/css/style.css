@@ -232,7 +232,7 @@ form button[type="submit"] {
     background-color: #530a0b;
     color: #fff;
     border: none;
-    padding: 0.6rem 1,5rem;
+    padding: 0.6rem 1.0rem;
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
@@ -240,7 +240,7 @@ form button[type="submit"] {
 
 /* mengubah warna tombol menjadi lebih gelap saat kursor mendekat */
 form button[type="submit"]:hover {
-    background-color: #164869;
+    background-color: #160203;
 }
 
 /* Footer */
