@@ -138,7 +138,7 @@ table {
 /* diterapkan ke kedua jenis sel sekaligus */
 th, td {
     /* rata kiri karena set awal th biasanya rata tengah */
-    text-align: left;
+    text-align: center;
     padding: 0.65rem 0.75rem;
     /* garis tipis di bagian bawah tiap sel */
     border-bottom: 1px solid #e2e6ea;
@@ -148,6 +148,7 @@ th, td {
 thead {
     background-color: #530a0b;
     color: #fff;
+    text-align: center;
 }
 
 /* khusus baris genap */
@@ -271,7 +272,7 @@ footer {
 }
 
 /* layar tablet ke bawah */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     main-section:nth-of-type(2) {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -312,4 +313,17 @@ footer {
         max-width: 100%;
     }
 }
+
+/* Tambahan Modifikasi */
+@media (min-width: 1400px) {
+    main {
+        max-width: 1200px;
+    }
+}
+
+.scroll-x-auto {
+    width: 100%;
+    overflow-x: auto;
+}
+
 
