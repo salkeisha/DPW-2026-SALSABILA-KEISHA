@@ -1,0 +1,315 @@
+* {
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* Gaya Dasar */
+body {
+    /* font diurutkan berdasarkan prioritas */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* Warna Teks */
+    color: #2b2b2b;
+    /* Warna Background/Latar Belakang */
+    background-color: #f5f6f8;
+    /* Jarak antar teks */
+    line-height: 1.5;
+}
+
+/* Semua tautan diberi warna biru (menggantikan warna biru browser */
+a {
+    color: #530a0b;
+    /* Menghilangkan underline dari tautan agar bersih */
+    text-decoration: none;
+}
+
+/* Agar underline baru muncul saat diarahkan ke atas tautan */
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #530a0b;
+    color: #fff;
+    /* nilai pertama: atas-bawah, nilai kedua: kanan-kiri */
+    padding: 1rem 1.5rem;
+    /* Flex mengubah agar anak dari header menjadi flex container dan tersusun secara horizontal */
+    display: flex;
+    /* Menyejajarkan flex item secara vertikan di tengah meski tinggi berbeda */
+    align-items: center;
+    /* Mendorong item pertama menempel di ujung kiri dan item terakhir di ujung kanan */
+    justify-content: space-between;
+    /* Mengizinkan flex item pindah ke baris baru kalau ruang tidak cukup */
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.4rem;
+}
+
+/* Untuk menyusun item-item menu */
+header nav ul {
+    /* Mengapus titik per item */
+    list-style: none;
+    /* Menu menjadi horizontal */
+    display: flex;
+    /* Memberi jarak seragam antar item */
+    gap: 1.25rem;
+}
+
+/* Menimpa warna tautan bawaan khusus untuk tautan yang ada di navbar */
+header nav a {
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Main Layout */
+main {
+    max-width: 1000px;
+    /* auto berarti sistem akan menengahkan elemen secara horizontal */
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    /* Latar putih untuk setiap section */
+    background-color: #fff;
+    /* Sudut kotak melengkung */
+    border-radius: 8px;
+    /* jika satu nilai aja berarti untuk semua (atas bawah kanan kiri sama) */
+    padding: 1.5rem;
+    /* jarak bawah tiap kartu */
+    margin-bottom: 1.5rem;
+    /* buat bayangan tiap kartu, 0: untuk kanan/kirinya, 1px: untuk jarak bayangan bawahnya dari kartu, 3px: blurnya */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Untuk setiap judul dalam section */
+section h2 {
+    margin-bottom: 1rem;
+    color: #530a0b;
+}
+
+/* Kartu Statistik */
+/* nth-of-type(2): section yg kedua */
+main section:nth-of-type(2) {
+    /* anak-anaknya langsung jadi grid */
+    display: grid;
+    /* 3 kolom lebarnya sama-sama 1fr */
+    grid-template-columns: repeat(4, 1fr);
+    /* jarak antar kolom */
+    gap: 1rem;
+}
+
+main section:nth-of-type(2) h2 {
+  grid-column: 1 / -1; 
+}
+
+/* styling setiap kartu (tiap article) */
+main section:nth-of-type(2) article {
+    background-color: #eef4fa;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+/* style article h3/judul kecil */
+main section:nth-of-type(2) article h3 {
+    font-size: 0.95rem;
+    color: #55677a;
+    margin-bottom: 0.5rem;
+}
+
+/* style paragrafnya (konteks disini angkanya) */
+main section:nth-of-type(2) article p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #530a0b;
+}
+
+/* Tabel */
+table {
+    /* lebar tabel, tabel melebar memenuhi kotaknya */
+    width: 100%;
+    /* agar baris antar batas antar sel digabung menjadi satu */
+    border-collapse: collapse;
+}
+
+/* diterapkan ke kedua jenis sel sekaligus */
+th, td {
+    /* rata kiri karena set awal th biasanya rata tengah */
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    /* garis tipis di bagian bawah tiap sel */
+    border-bottom: 1px solid #e2e6ea;
+}
+
+/* header tabel */
+thead {
+    background-color: #530a0b;
+    color: #fff;
+}
+
+/* khusus baris genap */
+tbody tr:nth-child(even) {
+    background-color: #f7f9fb;
+}
+
+/* saat kursor diarahkan ke sebuah baris maka baris berubah warnanya */
+tbody tr:hover {
+    background-color: #eef4fa;
+}
+
+/* untuk tombol edit dan hapus */
+td button {
+    padding: 0.35rem 0.7rem;
+    /* jarak kanan tiap tombol agar tidak aling menempel */
+    margin-right: 0.35rem;
+    /* menghapus border bawaan html */
+    border: none;
+    border-radius: 4px;
+    /* mengubah bentuk kursor menjadi ikon tangan menunjuk saat diatas tombol */
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/* tombol pertama */
+/* td button:first-of-type {
+    background-color: #f0ad4e;
+    color: #fff;
+} */
+
+/* tombol terakhir */
+/* td button:last-of-type {
+    background-color: #d9534f;
+    color: #fff;
+} */
+
+td button.btn-edit {
+    background-color: #f0ad4e;
+    color: #fff;
+}
+
+td button.btn-detail {
+    background-color: #d2a510;
+    color: #fff;
+}
+
+td button.btn-hapus {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+/* form */
+/* memberi jarak per p */
+form p {
+    margin-bottom: 1rem;
+}
+
+form label {
+    /* memaksa label selalu memenuhi satu baris penuh */
+    display: block;
+    /* jarak (bawah) antar teks label */
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    color: #444;
+}
+
+form input,
+form select {
+    width: 100%;
+    /* lebar input mengikuti lebar kotak pembungkusnya tapi tidak melebihi 400px */
+    max-width: 400px;
+    padding: 0.55rem 0.7rem;
+    /* border tipis, menggantikan border bawaan */
+    border: 1px solid #cdd4da;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* tombol submit */
+form button[type="submit"] {
+    background-color: #530a0b;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.0rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* mengubah warna tombol menjadi lebih gelap saat kursor mendekat */
+form button[type="submit"]:hover {
+    background-color: #160203;
+}
+
+/* Footer */
+footer {
+    /* teks diratakan ke tengah halaman */
+    text-align: center;
+    /* jarak seragam di ke 4 sisi */
+    padding: 1.25rem;
+    color: #7a8794;
+    font-size: 0.9rem;
+}
+
+/* Hamburger Menu (checkbox hack) */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none; /* disembunyikan di layar besar */
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Tabel Responsif  */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* layar tablet ke bawah */
+@media (max-width: 768px) {
+    main-section:nth-of-type(2) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* layar mobile */
+@media (max-width: 480px) {
+    header {
+        position: relative;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 1rem;
+    }
+
+    .nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    main section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+
+    form input,
+    form select {
+        max-width: 100%;
+    }
+}
+
