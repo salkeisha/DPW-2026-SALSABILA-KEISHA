@@ -29,3 +29,23 @@ function initHapusConfirm() {
         });
     });
 }
+
+function initTableFilter() {
+    // Mengambil kotak input dari tabelnya
+    const input = document.getElementById("search-input");
+    const table = document.querySelector(".table-responsive table");
+    // agar aman jika dipanggil di halaman apapun
+    if (!input || !table) return;
+
+    // keyup=tabel langsung tersaring ketika pengguna mengetik
+    input.addEventListener("keyup", function () {
+        // mengambil kata kunci pencarian
+        const keyword = input.value.toLowerCase();
+        // mengulang setiap baris tabel 
+        const rows = table.querySelectorAll("tbody tr");
+        rows.forEach(function (row) {
+            const teks = row.textContent.toLowerCase();
+            row.style.display = teks.includes(keyword) ? "" : "none";
+        });
+    });
+}
