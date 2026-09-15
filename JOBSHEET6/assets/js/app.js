@@ -13,22 +13,19 @@ function initNavToggle() {
 
 // Konfirmasi hapus 
 function initHapusConfirm() {
-    // Memasang event listener ke banyak tombol sekaligus
-    document.querySelectorAll(".btn-hapus").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-            // Menvari baris tabel yang jadi induk tombol
-            const row = btn.closest("tr");
-            // Mengambil nama/judul dari baris
-            const nama = row ? row.querySelector("td")?.textContent : "data ini";
-            // Menampilkan dialog konfirmasi
-            const yakin = confirm("Yakin ingin menghapus \"" + nama + "\"?");
-            // Mengahpus baris dari tampilan
-            if (yakin && row) {
-                row.remove();
-            }
-        });
+    document.addEventListener("click", function (e) {
+        const btn = e.target.closest(".btn-hapus");
+        if (!btn) return;
+
+        const row = btn.closest("tr");
+        const nama = row ? row.querySelector("td")?.textContent : "data ini";
+        const yakin = confirm("Yakin ingin menghapus \"" + nama + "\"?");
+        if (yakin && row) {
+            row.remove();
+        }
     });
 }
+
 
 function initTableFilter() {
     // Mengambil kotak input dari tabelnya
