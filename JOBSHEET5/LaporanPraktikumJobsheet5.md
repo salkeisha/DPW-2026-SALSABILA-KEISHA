@@ -12,14 +12,14 @@ File JS dapat dilihat di :
 Pada file html sebelumnya hal yang diubah adalah :
 - Mengubah kode untuk membuat menu hamburger yang awalnya menggunakan pasangan `<input type="checkbox">` + `<label>`. Menjadi `<button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>`
 - Membuat div baru sebelum tabel :
-```
+```html
 <div class="search-box">
     <label for="search-input">Cari Judul Buku</label>
     <input type="text" id="search-input" placeholder="Ketik judul buku...">
 </div>
 ```
 - Memberi class btn-hapus pada tombol hapus.
-```
+```html
 <button type="button">Edit</button>
 <button type="button" class="btn-hapus">Hapus</button>
 ```

@@ -16,11 +16,11 @@ File JS dan JSON dapat dilihat di :
 Pada file html sebelumnya hal yang diubah adalah :
 - Bagian tbody yang dikosongkan. Karena bagian data diisi menggunakan JSON.
 - Meletakkan elemen <p> di antara kolom pencarian dan tabel.
-```
+```html
 <p id="loading-indicator" style="display:none;">Memuat data...</p>
 ```
 - Merubah urutan tag script. Sebelumnya hanya ada script yang menghubungkan `ke app.js` saja, sekarang menghubungkan juga ke `buku.js`. Dengan urutan script ke app.js diletakkan terlebih dahulu sebelum ke buku.js.
-```
+```html
 <script src="../assets/js/app.js"></script>
 <script src="../assets/js/buku.js"></script>
 ```
