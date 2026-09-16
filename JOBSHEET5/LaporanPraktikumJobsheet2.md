@@ -5,7 +5,8 @@
 #### NIM   : 254107020048
 ---
 
-File CSS dapat dilihat di : [assets/css/style.css](asstes/css/style.css)
+File JS dapat dilihat di : 
+- [File app.js](assets/js/app.js)
 
 ## 1. Perubahan di HTML 💻
 Pada file html sebelumnya hal yang diubah adalah :
