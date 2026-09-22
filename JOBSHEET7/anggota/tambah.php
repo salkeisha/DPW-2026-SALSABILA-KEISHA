@@ -25,7 +25,7 @@
     <main>
         <section>
             <h2>Tambah Anggota</h2>
-            <form id="form-tambah">
+            <form id="form-tambah" method="post" action="proses_tambah.php">
                 <p>
                     <label for="nama">Nama</label>
                     <input type="text" id="nama" name="nama" required>
