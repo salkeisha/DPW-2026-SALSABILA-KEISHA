@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIMPUS-Mini | Beranda</title>
+    <!-- Penambahan kode untuk menghubungkan antara file html dengan css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header> 
+        <!-- Judul Utama Aplikasi, h1 adalah header level tertinggi -->
+        <h1>SIMPUS-Mini</h1>
+        <!-- Dirbah karena status bua/tutupu menu sekrang disimpan lewat class css yang ditambahkan JS -->
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+        <nav>
+            <ul> 
+                <!-- Terdapat 4 navigasi di halaman utama -->
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="buku/list.html">Daftar Buku</a></li>
+                <li><a href="buku/tambah.html">Tambah Buku</a></li>
+                <li><a href="anggota/list.html">Daftar Anggota</a></li>
+                <li><a href="anggota/tambah.html">Tambah Anggota</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten utama -->
+    <main>
+        <section>
+            <h2>Selamat Datang di Sistem Perpustakaan Mini</h2>
+            <p>Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
+        </section>
+
+        <section>
+            <h2>Ringkasan</h2>
+            <!-- Article mewakili satu "kartu" statistik yang berdiri sendiri. -->
+            <article>
+                <h3>Total Buku</h3>
+                <p>12</p>
+            </article>
+            <article>
+                <h3>Total Anggota</h3>
+                <p>8</p>
+            </article>
+            <article>
+                <h3>Sedang Dipinjam</h3>
+                <p>3</p>
+            </article>
+            <article>
+                <h3>Buku Terlambat</h3>
+                <p>2</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <!-- &copy adalah simbol copyright dan &mdash adalah entity untuk tanda pisah panjang -->
+        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
+    </footer>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
