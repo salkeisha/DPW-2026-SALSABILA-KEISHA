@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $port = '5432'; // Port default PostgreSQL
-$db   = 'simpus_mini';
+$db   = 'simpus-mini';
 $user = 'postgres'; // Sesuaikan dengan username PostgreSQL kamu
 $pass = '12345678'; // Sesuaikan dengan password PostgreSQL kamu
 
