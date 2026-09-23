@@ -1,31 +1,17 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIMPUS-Mini | Tambah Buku</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-</head>
-<body>
-    <header> 
-        <h1>SIMPUS-Mini</h1>
-        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
-        <nav>
-            <ul> 
-                <!-- Terdapat 4 navigasi di halaman utama -->
-                <li><a href="../index.html">Beranda</a></li>
-                <li><a href="list.html">Daftar Buku</a></li>
-                <li><a href="tambah.html">Tambah Buku</a></li>
-                <li><a href="../anggota/list.html">Daftar Anggota</a></li>
-                <li><a href="../anggota/tambah.html">Tambah Anggota</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php
+$page_title = "Tambah Buku";
+include __DIR__ . '/../includes/header.php';
 
-    <!-- Menambahkan form untuk menambahkan buku -->
-    <main>
+$flash = $_SESSION['flash'] ?? null;
+unset($_SESSION['flash']);
+?>
         <section>
             <h2>Tambah Buku</h2>
+
+            <?php if ($flash): ?>
+                <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo $flash['pesan']; ?></p>
+            <?php endif; ?>
+
             <form id="form-tambah" method="post" action="proses_tambah.php">
                 <p>
                     <label for="judul">Judul</label><br>
@@ -44,11 +30,11 @@
                     <input type="text" id="isbn" name="isbn">
                 </p>
                 <p>
-                    <label for="stok">Judul</label><br>
+                    <label for="stok">Stok</label><br>
                     <input type="number" id="stok" name="stok" min="0" required>
                 </p>
                 <p>
-                    <label for="kategori">Kategori</label>
+                    <label for="kategori">Kategori</label><br>
                     <select id="kategori" name="kategori">
                         <option value="fiksi">Fiksi</option>
                         <option value="non-fiksi">Non-Fiksi</option>
@@ -56,17 +42,8 @@
                     </select>
                 </p>
                 <p>
-                    <!-- Tombol untuk mengirimkan seluruh isi form -->
                     <button type="submit">Simpan</button>
                 </p>
             </form>
         </section>
-    </main>
-
-    <footer>
-        <!-- &copy adalah simbol copyright dan &mdash adalah entity untuk tanda pisah panjang -->
-        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
-    </footer>
-    <script src="../assets/js/app.js"></script>
-</body>
-</html>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
