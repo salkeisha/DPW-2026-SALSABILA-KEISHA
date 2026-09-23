@@ -1,0 +1,354 @@
+/* ==========================================
+   1. VARIABLE & RESET
+   ========================================== */
+:root {
+    --bg-main: #121212;
+    --bg-surface: #1e1e1e;
+    --bg-card: #282828;
+    --primary-yellow: #f5c518;
+    --primary-hover: #e0b20d;
+    --text-main: #ffffff;
+    --text-muted: #aaaaaa;
+    --border-color: #383838;
+    --danger-red: #ff4d4d;
+    --success-green: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+a {
+    color: var(--primary-yellow);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* ==========================================
+   2. HEADER & NAVIGATION
+   ========================================== */
+header {
+    background-color: var(--bg-surface);
+    border-bottom: 2px solid var(--primary-yellow);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-yellow);
+    letter-spacing: 1px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+header nav a {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+header nav a:hover, header nav a.active {
+    color: var(--primary-yellow);
+    border-bottom: 2px solid var(--primary-yellow);
+    padding-bottom: 4px;
+}
+
+/* ==========================================
+   3. HERO BANNER & BUTTONS
+   ========================================== */
+.hero-banner {
+    background: linear-gradient(135deg, #1e1e1e 0%, #2b2600 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 2rem auto;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.banner-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner-content h2 span {
+    color: var(--primary-yellow);
+}
+
+.banner-content p {
+    color: var(--text-muted);
+}
+
+.banner-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-yellow);
+    color: #000000;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    color: #000000;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-yellow);
+    color: var(--primary-yellow);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-yellow);
+    color: #000000;
+}
+
+.btn-secondary {
+    background-color: #333333;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: #444444;
+}
+
+.btn-hapus {
+    background-color: #3a1c1c;
+    color: #ff6b6b;
+    border: 1px solid #5a2525;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.btn-hapus:hover {
+    background-color: var(--danger-red);
+    color: #ffffff;
+}
+
+/* ==========================================
+   4. DASHBOARD STATS CARDS
+   ========================================== */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto 2.5rem auto;
+    padding: 0 1rem;
+}
+
+.stat-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-yellow);
+}
+
+.stat-card.card-highlight {
+    border-left: 4px solid var(--primary-yellow);
+}
+
+.stat-label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--primary-yellow);
+    margin: 0.2rem 0;
+}
+
+.stat-sub {
+    font-size: 0.8rem;
+    color: #777777;
+}
+
+/* ==========================================
+   5. TABLE & LAYOUT
+   ========================================== */
+.content-container, .recent-watchlist {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.table-container {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.data-table th, .data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+    background-color: #161616;
+    color: var(--primary-yellow);
+    font-weight: 600;
+}
+
+.data-table tbody tr:hover {
+    background-color: var(--bg-card);
+}
+
+/* Badges & Tags */
+.tag-platform {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    border: 1px solid #555555;
+    display: inline-block;
+}
+
+.status-badge {
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-badge.daftar-tunggu {
+    background-color: #3a3200;
+    color: #ffe600;
+}
+
+.status-badge.sedang-ditonton {
+    background-color: #002b49;
+    color: #38b6ff;
+}
+
+.status-badge.selesai {
+    background-color: #0f3818;
+    color: #43df6a;
+}
+
+/* ==========================================
+   6. FORMS & VALIDATION
+   ========================================== */
+form {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+form h2 {
+    color: var(--primary-yellow);
+}
+
+form p {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+}
+
+/* Error JS */
+span.error {
+    color: var(--danger-red);
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.3rem;
+}

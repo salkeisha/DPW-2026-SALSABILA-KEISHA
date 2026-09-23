@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Film & Serial - CineLog</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">CineLog</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="list.html" class="active">Daftar Film</a></li>
+                <li><a href="tambah.html">Tambah Film</a></li>
+                <li><a href="../temanNobar/list.html">Daftar Teman</a></li>
+                <li><a href="../temanNobar/tambah.html">Tambah Teman</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-container" style="margin-top: 2rem;">
+        <div class="section-header">
+            <div>
+                <h2>Daftar Film & Serial</h2>
+                <p>Kelola semua koleksi tontonan dan watchlist kamu.</p>
+            </div>
+            <a href="tambah.html" class="btn btn-primary">+ Tambah Film</a>
+        </div>
+
+        <!-- Filter Pencarian -->
+        <div style="margin-bottom: 1rem;">
+            <input type="text" id="search-input" placeholder="Cari judul, genre, atau platform..." style="max-width: 300px;">
+        </div>
+
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Judul</th>
+                        <th>Genre</th>
+                        <th>Platform</th>
+                        <th>Rating</th>
+                        <th>Status</th>
+                        <th>Ulasan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Inception</strong></td>
+                        <td>Sci-Fi, Action</td>
+                        <td><span class="tag-platform">Netflix</span></td>
+                        <td>⭐ 4.8/5</td>
+                        <td><span class="status-badge selesai">Selesai</span></td>
+                        <td>Alur ceritanya sangat jenius dan memukau.</td>
+                        <td><button class="btn btn-secondary btn-hapus">Hapus</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Stranger Things</strong></td>
+                        <td>Horror, Sci-Fi</td>
+                        <td><span class="tag-platform">Netflix</span></td>
+                        <td>⭐ 4.5/5</td>
+                        <td><span class="status-badge sedang-ditonton">Sedang Ditonton</span></td>
+                        <td>Season terbaru makin seru.</td>
+                        <td><button class="btn btn-secondary btn-hapus">Hapus</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Dune: Part Two</strong></td>
+                        <td>Sci-Fi, Adventure</td>
+                        <td><span class="tag-platform">Cinema</span></td>
+                        <td>⭐ 4.9/5</td>
+                        <td><span class="status-badge daftar-tunggu">Daftar Tunggu</span></td>
+                        <td>Rencana nonton weekend ini.</td>
+                        <td><button class="btn btn-secondary btn-hapus">Hapus</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="../app.js"></script>
+</body>
+</html>

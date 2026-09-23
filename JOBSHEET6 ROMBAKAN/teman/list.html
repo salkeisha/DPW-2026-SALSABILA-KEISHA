@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Teman Nobar - CineLog</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">CineLog</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="../film/list.html">Daftar Film</a></li>
+                <li><a href="../film/tambah.html">Tambah Film</a></li>
+                <li><a href="list.html" class="active">Daftar Teman</a></li>
+                <li><a href="tambah.html">Tambah Teman</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-container" style="margin-top: 2rem;">
+        <div class="section-header">
+            <div>
+                <h2>Daftar Teman Nobar</h2>
+                <p>Daftar partner nonton beserta platform dan genre favoritnya.</p>
+            </div>
+            <a href="tambah.html" class="btn btn-primary">+ Tambah Teman</a>
+        </div>
+
+        <!-- Filter Pencarian -->
+        <div style="margin-bottom: 1rem;">
+            <input type="text" id="search-input" placeholder="Cari nama atau kontak..." style="max-width: 300px;">
+        </div>
+
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Platform Favorit</th>
+                        <th>Genre Favorit</th>
+                        <th>Kontak</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Andi</strong></td>
+                        <td><span class="tag-platform">Cinema</span></td>
+                        <td>Action, Thriller</td>
+                        <td>081234567890</td>
+                        <td><button class="btn btn-secondary btn-hapus">Hapus</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Budi</strong></td>
+                        <td><span class="tag-platform">Discord/PC</span></td>
+                        <td>Horror, Comedy</td>
+                        <td>@budi_movie</td>
+                        <td><button class="btn btn-secondary btn-hapus">Hapus</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="../app.js"></script>
+</body>
+</html>

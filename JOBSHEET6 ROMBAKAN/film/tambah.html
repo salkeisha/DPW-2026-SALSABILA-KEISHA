@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Film / Serial - CineLog</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">CineLog</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="list.html">Daftar Film</a></li>
+                <li><a href="tambah.html" class="active">Tambah Film</a></li>
+                <li><a href="../temanNobar/list.html">Daftar Teman</a></li>
+                <li><a href="../temanNobar/tambah.html">Tambah Teman</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-container">
+        <form id="form-tambah" action="list.html" method="get">
+            <h2>Tambah Film / Serial</h2>
+            <br>
+            <p>
+                <label for="judul">Judul Film / Serial</label><br>
+                <input type="text" id="judul" name="judul" required>
+            </p>
+            <p>
+                <label for="genre">Genre</label><br>
+                <input type="text" id="genre" name="genre" placeholder="Contoh: Action, Sci-Fi" required>
+            </p>
+            <p>
+                <label for="platform">Platform</label><br>
+                <select id="platform" name="platform">
+                    <option value="Netflix">Netflix</option>
+                    <option value="Cinema">Cinema / Bioskop</option>
+                    <option value="Disney+">Disney+</option>
+                    <option value="Prime Video">Prime Video</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </p>
+            <p>
+                <label for="rating">Rating (0.0 - 5.0)</label><br>
+                <input type="number" id="rating" name="rating" min="0" max="5" step="0.1" placeholder="Contoh: 4.5">
+            </p>
+            <p>
+                <label for="status">Status Tontonan</label><br>
+                <select id="status" name="status">
+                    <option value="Daftar Tunggu">Daftar Tunggu</option>
+                    <option value="Sedang Ditonton">Sedang Ditonton</option>
+                    <option value="Selesai">Selesai</option>
+                </select>
+            </p>
+            <p>
+                <label for="ulasan">Ulasan Singkat</label><br>
+                <textarea id="ulasan" name="ulasan" rows="3" placeholder="Masukkan kesan atau ulasan singkat..."></textarea>
+            </p>
+            <p>
+                <button type="submit" class="btn btn-primary">Simpan Film</button>
+                <a href="list.html" class="btn btn-secondary">Batal</a>
+            </p>
+        </form>
+    </main>
+
+    <script src="../app.js"></script>
+</body>
+</html>

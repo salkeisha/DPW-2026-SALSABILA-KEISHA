@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Teman Nobar - CineLog</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">CineLog</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="../film/list.html">Daftar Film</a></li>
+                <li><a href="../film/tambah.html">Tambah Film</a></li>
+                <li><a href="list.html">Daftar Teman</a></li>
+                <li><a href="tambah.html" class="active">Tambah Teman</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-container">
+        <form id="form-tambah" action="list.html" method="get">
+            <h2>Tambah Teman Nobar</h2>
+            <br>
+            <p>
+                <label for="nama">Nama Teman</label><br>
+                <input type="text" id="nama" name="nama" required>
+            </p>
+            <p>
+                <label for="platform_favorit">Platform Favorit</label><br>
+                <select id="platform_favorit" name="platform_favorit">
+                    <option value="Netflix">Netflix</option>
+                    <option value="Cinema">Cinema / Bioskop</option>
+                    <option value="Disney+">Disney+</option>
+                    <option value="Prime Video">Prime Video</option>
+                    <option value="Discord/PC">Discord / PC</option>
+                </select>
+            </p>
+            <p>
+                <label for="genre_favorit">Genre Favorit</label><br>
+                <input type="text" id="genre_favorit" name="genre_favorit" placeholder="Contoh: Horror, Thriller">
+            </p>
+            <p>
+                <label for="kontak">Kontak (No. WA / Discord)</label><br>
+                <input type="text" id="kontak" name="kontak" placeholder="Contoh: 08123456789 / @username" required>
+            </p>
+            <p>
+                <button type="submit" class="btn btn-primary">Simpan Teman</button>
+                <a href="list.html" class="btn btn-secondary">Batal</a>
+            </p>
+        </form>
+    </main>
+
+    <script src="../app.js"></script>
+</body>
+</html>

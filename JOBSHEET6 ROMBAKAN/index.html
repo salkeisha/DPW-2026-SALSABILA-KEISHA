@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - CineLog</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">CineLog</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="film/list.html">Daftar Film</a></li>
+                <li><a href="film/tambah.html">Tambah Film</a></li>
+                <li><a href="teman/list.html">Daftar Teman</a></li>
+                <li><a href="teman/tambah.html">Tambah Teman</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="banner-content">
+                <h2>Selamat Datang di <span>CineLog</span></h2>
+                <p>Kelola daftar tontonan film, serial favorit, dan agenda nonton bareng teman dalam satu tempat.</p>
+            </div>
+            <div class="banner-actions">
+                <a href="film/tambah.html" class="btn btn-primary">+ Tambah Film</a>
+                <a href="teman/tambah.html" class="btn btn-outline">+ Tambah Teman</a>
+            </div>
+        </section>
+
+        <!-- Ringkasan Statistik -->
+        <section class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-data">
+                    <span class="stat-label">Total Koleksi</span>
+                    <strong class="stat-value">12</strong>
+                    <span class="stat-sub">Film & Serial</span>
+                </div>
+            </div>
+
+            <div class="stat-card card-highlight">
+                <div class="stat-data">
+                    <span class="stat-label">Sedang Ditonton</span>
+                    <strong class="stat-value">3</strong>
+                    <span class="stat-sub">Dalam Proses</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-data">
+                    <span class="stat-label">Watchlist</span>
+                    <strong class="stat-value">5</strong>
+                    <span class="stat-sub">Daftar Tunggu</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-data">
+                    <span class="stat-label">Teman Nobar</span>
+                    <strong class="stat-value">4</strong>
+                    <span class="stat-sub">Partner Nonton</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preview Tontonan Terbaru -->
+        <section class="recent-watchlist">
+            <div class="section-header">
+                <h3>Tontonan Terbaru</h3>
+                <a href="film/list.html" class="view-all-link">Lihat Semua →</a>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Judul</th>
+                            <th>Genre</th>
+                            <th>Platform</th>
+                            <th>Rating</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Inception</strong></td>
+                            <td>Sci-Fi, Action</td>
+                            <td><span class="tag-platform">Netflix</span></td>
+                            <td>⭐ 4.8/5</td>
+                            <td><span class="status-badge selesai">Selesai</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stranger Things</strong></td>
+                            <td>Horror, Drama</td>
+                            <td><span class="tag-platform">Netflix</span></td>
+                            <td>⭐ 4.5/5</td>
+                            <td><span class="status-badge sedang-ditonton">Sedang Ditonton</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dune: Part Two</strong></td>
+                            <td>Sci-Fi, Adventure</td>
+                            <td><span class="tag-platform">Cinema</span></td>
+                            <td>⭐ 4.9/5</td>
+                            <td><span class="status-badge daftar-tunggu">Daftar Tunggu</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
