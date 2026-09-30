@@ -1,12 +1,12 @@
 FROM php:8.2-apache
 
-# Install extension pgsql & pdo_pgsql
+# Install driver PostgreSQL
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
-# Cukup copy SELURUH isi proyek ke folder Apache
-COPY . /var/www/html/
+# Copy HANYA isi folder JOBSHEET10 ke folder utama web Apache
+COPY JOBSHEET10/ /var/www/html/
 
 RUN a2enmod rewrite
 
