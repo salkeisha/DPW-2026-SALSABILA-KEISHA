@@ -30,50 +30,55 @@ $stmt->execute();
 $daftarAnggota = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $totalPages = max(1, (int) ceil($totalRows / $perPage));
 ?>
-        <section>
-            <h2>Daftar Anggota</h2>
+<section>
+    <h2>Daftar Anggota</h2>
 
-            <?php if ($flash): ?>
-                <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo $flash['pesan']; ?></p>
-            <?php endif; ?>
+    <?php if ($flash): ?>
+        <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo $flash['pesan']; ?></p>
+    <?php endif; ?>
 
-            <div class="search-box">
-                <label for="search-input">Cari Nama Anggota</label>
-                <input type="text" id="search-input" placeholder="Ketik nama anggota...">
-            </div>
+    <div class="search-box">
+        <label for="search-input">Cari Nama Anggota</label>
+        <input type="text" id="search-input" placeholder="Ketik nama anggota...">
+    </div>
 
-            <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>No. Anggota</th>
-                        <th>Nama</th>
-                        <th>Alamat</th>
-                        <th>No. HP</th>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>No. Anggota</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>No. HP</th>
+                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                         <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if (empty($daftarAnggota)): ?>
-                    <tr>
-                        <td colspan="5">Belum ada data anggota. Silakan tambah lewat menu "Tambah Anggota".</td>
-                    </tr>
-                    <?php else: ?>
-                        <?php foreach ($daftarAnggota as $anggota): ?>
-                        <tr>
-                            <td><?php echo $anggota['no_anggota']; ?></td>
-                            <td><?php echo $anggota['nama']; ?></td>
-                            <td><?php echo $anggota['alamat']; ?></td>
-                            <td><?php echo $anggota['no_hp']; ?></td>
-                            <td>
-                                <button type="button">Edit</button>
-                                <button type="button" class="btn-hapus">Hapus</button>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
                     <?php endif; ?>
-                </tbody>
-            </table>
-            </div>
-        </section>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($daftarAnggota as $row): ?>
+                    <tr>
+                        <td><?= $row['id']; ?></td>
+                        <td><?= htmlspecialchars($row['nama']); ?></td>
+                        <td><?= htmlspecialchars($row['no_anggota']); ?></td>
+                        <td><?= htmlspecialchars($row['alamat']); ?></td>
+                        <td><?= htmlspecialchars($row['no_hp']); ?></td>
+
+                        <!-- Tombol Edit & Hapus hanya tampil jika role = admin -->
+                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                            <td>
+                                <a href="edit.php?id=<?= $row['id']; ?>">Edit</a>
+                                <form action="hapus.php" method="post" style="display:inline;"
+                                    onsubmit="return confirm('Yakin hapus?');">
+                                    <input type="hidden" name="id" value="<?= $row['id']; ?>">
+                                    <button type="submit">Hapus</button>
+                                </form>
+                            </td>
+                        <?php endif; ?>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</section>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

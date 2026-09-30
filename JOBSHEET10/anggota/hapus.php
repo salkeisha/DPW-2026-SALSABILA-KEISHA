@@ -7,6 +7,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+if ($_SESSION['role'] !== 'admin') {
+    // Tendang kembali ke beranda/list jika bukan admin
+    header('Location: ../index.php');
+    exit;
+}
+
 $id = $_POST['id'] ?? null;
 if ($id) {
     $stmt = $pdo->prepare("DELETE FROM anggota WHERE id = :id");
