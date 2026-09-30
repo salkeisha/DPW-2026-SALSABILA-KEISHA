@@ -15,7 +15,7 @@ unset($_SESSION['flash']);
 ?>
 <main>
     <section>
-        <h2 style="text-align: center; margin-bottom: 1.5rem;">Login Petugas</h2>
+        <h2 style="text-align: center; margin-bottom: 1.5rem;">Login</h2>
 
         <?php if ($flash): ?>
             <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo $flash['pesan']; ?></p>
@@ -32,7 +32,7 @@ unset($_SESSION['flash']);
                 <input type="password" id="password" name="password" required>
             </div>
 
-            <button type="submit">Masuk</button>
+            <button type="submit" class="btn-submit">Masuk</button>
         </form>
 
         <p style="text-align: center; margin-top: 1rem;">

@@ -1,12 +1,13 @@
 <?php
 require __DIR__ . '/../includes/auth.php';
-$page_title = "Tambah Anggota";
-include __DIR__ . '/../includes/header.php';
 
 if ($_SESSION['role'] !== 'admin') {
     header('Location: ../index.php');
     exit;
 }
+
+$page_title = "Tambah Anggota";
+include __DIR__ . '/../includes/header.php';
 
 $flash = $_SESSION['flash'] ?? null;
 unset($_SESSION['flash']);
