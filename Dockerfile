@@ -14,3 +14,5 @@ RUN a2enmod rewrite
 
 # 5. Buka port 80 untuk lalu lintas web
 EXPOSE 80
+
+COPY public/ /var/www/html/
