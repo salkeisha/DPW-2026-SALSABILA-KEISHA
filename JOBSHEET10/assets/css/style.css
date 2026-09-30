@@ -164,6 +164,70 @@ td form.form-hapus {
     display: inline;
 }
 
+form {
+    max-width: 600px; /* Batasi lebar form agar tidak melar se-layar */
+    margin: 0 auto;   /* Posisikan form di tengah section */
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+/* Mengatur semua jenis input, select, dan textarea */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efek saat input diklik/aktif */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #4a0e0e;
+    box-shadow: 0 0 0 3px rgba(74, 14, 14, 0.15);
+    outline: none;
+}
+
+/* Styling Tombol Simpan */
+.btn-submit {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4a0e0e;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #3b0a0a;
+}
+
 /* ===== Footer ===== */
 footer {
     text-align: center;

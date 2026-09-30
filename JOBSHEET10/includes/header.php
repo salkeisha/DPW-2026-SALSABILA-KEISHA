@@ -20,24 +20,26 @@ $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
 <body>
 
 <header>
-    <h1>SIMPUS-Mini</h1>
-    <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+    <h1><a href="<?php echo $base; ?>index.php" style="color: #fff; text-decoration: none;">SIMPUS-Mini</a></h1>
 
-    <nav>
-        <ul>
-            <li><a href="<?php echo $base; ?>index.php">Beranda</a></li>
-            <li><a href="<?php echo $base; ?>buku/list.php">Daftar Buku</a></li>
+    <?php if ($sudahLogin): ?>
+        <!-- Tombol Toggle (jika pakai tampilan mobile/responsive) -->
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
 
-            <?php if ($sudahLogin): ?>
+        <!-- Seluruh NAV dipindah ke DALAM if ($sudahLogin) agar hantu menu hilang saat belum login -->
+        <nav>
+            <ul>
+                <li><a href="<?php echo $base; ?>index.php">Beranda</a></li>
+                <li><a href="<?php echo $base; ?>buku/list.php">Daftar Buku</a></li>
                 <li><a href="<?php echo $base; ?>buku/tambah.php">Tambah Buku</a></li>
 
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                     <li><a href="<?php echo $base; ?>anggota/list.php">Daftar Anggota</a></li>
                     <li><a href="<?php echo $base; ?>anggota/tambah.php">Tambah Anggota</a></li>
                 <?php endif; ?>
-            <?php endif; ?>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+    <?php endif; ?>
 
     <div class="auth-status">
         <?php if ($sudahLogin): ?>
