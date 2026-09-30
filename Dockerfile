@@ -16,3 +16,5 @@ RUN a2enmod rewrite
 EXPOSE 80
 
 COPY public/ /var/www/html/
+
+COPY JOBSHEET10/ /var/www/html/
