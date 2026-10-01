@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-if (isset($_SESSION['user_id'])) {
+if (!in_array($_SESSION['role'] ?? '', ['admin', 'petugas'])) {
     header('Location: ../index.php');
     exit;
 }
