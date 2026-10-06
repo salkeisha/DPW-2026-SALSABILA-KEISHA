@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
 # Copy HANYA isi folder JOBSHEET10 ke folder utama web Apache
-COPY JOBSHEET10/ /var/www/html/
+COPY JOBSHEET11/ /var/www/html/
 
 RUN a2enmod rewrite
 
