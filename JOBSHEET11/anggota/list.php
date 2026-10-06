@@ -39,7 +39,7 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
 
     <div class="search-box">
         <label for="search-input">Cari Nama Anggota</label>
-        <input type="text" id="search-input" placeholder="Ketik nama anggota...">
+        <input type="text" id="search-input" name="q" value="<?php echo e($keyword); ?>" placeholder="Ketik nama anggota...">
     </div>
 
     <div class="table-responsive">
@@ -58,13 +58,10 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
             <tbody>
                 <?php foreach ($daftarAnggota as $row): ?>
                     <tr>
-                        <td><?= $row['id']; ?></td>
-                        <td><?= htmlspecialchars($row['nama']); ?></td>
-                        <td><?= htmlspecialchars($row['no_anggota']); ?></td>
-                        <td><?= htmlspecialchars($row['alamat']); ?></td>
-                        <td><?= htmlspecialchars($row['no_hp']); ?></td>
-
-                        <!-- Tombol Edit & Hapus hanya tampil jika role = admin -->
+                        <td><?php echo e($anggota['no_anggota']); ?></td>
+                        <td><?php echo e($anggota['nama']); ?></td>
+                        <td><?php echo e($anggota['alamat']); ?></td>
+                        <td><?php echo e($anggota['no_hp']); ?></td>
                         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
                             <td>
                                 <a href="edit.php?id=<?= $row['id']; ?>">Edit</a>
