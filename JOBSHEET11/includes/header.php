@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-$sudahLogin = isset($_SESSION['user_id']);
+$sudahLogin = isset($_SESSION['user_id']) || isset($_SESSION['id']);
 
 $_jobsheetRoot = dirname(__DIR__);
 $_scriptDir = dirname($_SERVER['SCRIPT_FILENAME']);
