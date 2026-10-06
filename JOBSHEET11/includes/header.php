@@ -41,7 +41,7 @@ $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
                 <span><?php echo $_SESSION['nama']; ?></span>
                 <a href="<?php echo $base; ?>auth/logout.php">Logout</a>
             <?php else: ?>
-                <a href="<?php echo $base; ?>auth/login.php">Login</a>
+                <a href="<?php echo $base; ?>../auth/login.php">Login</a>
             <?php endif; ?>
         </div>
     </header>
