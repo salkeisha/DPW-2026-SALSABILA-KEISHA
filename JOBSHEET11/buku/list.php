@@ -1,5 +1,4 @@
 <?php
-require __DIR__ . '/../includes/auth.php';
 $page_title = "Daftar Buku";
 include __DIR__ . '/../includes/header.php';
 require __DIR__ . '/../includes/koneksi.php';
@@ -30,7 +29,6 @@ $stmt->execute();
 $daftarBuku = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $totalPages = max(1, (int) ceil($totalRows / $perPage));
 ?>
-
         <section>
             <h2>Daftar Buku</h2>
 
@@ -39,8 +37,13 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
             <?php endif; ?>
 
             <div class="search-box">
-                <label for="search-input">Cari Judul Buku</label>
-                <input type="text" id="search-input" placeholder="Ketik judul buku...">
+                <form method="get" action="list.php">
+                    <span>
+                        <label for="search-input">Cari Judul Buku</label><br>
+                        <input type="text" id="search-input" name="q" value="<?php echo e($keyword); ?>" placeholder="Ketik judul buku...">
+                    </span>
+                    <button type="submit">Cari</button>
+                </form>
             </div>
 
             <div class="table-responsive">
@@ -57,18 +60,22 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                 <tbody>
                     <?php if (empty($daftarBuku)): ?>
                     <tr>
-                        <td colspan="5">Belum ada data buku. Silakan tambah lewat menu "Tambah Buku".</td>
+                        <td colspan="5">Tidak ada data buku yang cocok.</td>
                     </tr>
                     <?php else: ?>
                         <?php foreach ($daftarBuku as $buku): ?>
                         <tr>
-                            <td><?php echo e(buku['judul']); ?></td>
-                            <td><?php echo e(buku['pengarang']); ?></td>
+                            <td><?php echo e($buku['judul']); ?></td>
+                            <td><?php echo e($buku['pengarang']); ?></td>
                             <td><?php echo $buku['tahun']; ?></td>
                             <td><?php echo $buku['stok']; ?></td>
                             <td>
-                                <button type="button">Edit</button>
-                                <button type="button" class="btn-hapus">Hapus</button>
+                                <a href="edit.php?id=<?php echo $buku['id']; ?>" class="btn-edit">Edit</a>
+                                <form class="form-hapus" method="post" action="hapus.php">
+                                    <input type="hidden" name="id" value="<?php echo $buku['id']; ?>">
+                                    <?php echo csrf_field(); ?>
+                                    <button type="submit" class="btn-hapus">Hapus</button>
+                                </form>
                             </td>
                         </tr>
                         <?php endforeach; ?>
@@ -76,5 +83,12 @@ $totalPages = max(1, (int) ceil($totalRows / $perPage));
                 </tbody>
             </table>
             </div>
+
+            <nav class="pagination">
+                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                <a href="list.php?page=<?php echo $i; ?><?php echo $keyword !== '' ? '&q=' . urlencode($keyword) : ''; ?>"
+                   class="<?php echo $i === $page ? 'active' : ''; ?>"><?php echo $i; ?></a>
+                <?php endfor; ?>
+            </nav>
         </section>
 <?php include __DIR__ . '/../includes/footer.php'; ?>

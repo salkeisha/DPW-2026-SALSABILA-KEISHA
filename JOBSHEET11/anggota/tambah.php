@@ -1,11 +1,5 @@
 <?php
 require __DIR__ . '/../includes/auth.php';
-
-if ($_SESSION['role'] !== 'admin') {
-    header('Location: ../index.php');
-    exit;
-}
-
 $page_title = "Tambah Anggota";
 include __DIR__ . '/../includes/header.php';
 
@@ -20,6 +14,7 @@ unset($_SESSION['flash']);
             <?php endif; ?>
 
             <form id="form-tambah" method="post" action="proses_tambah.php">
+                <?php echo csrf_field(); ?>
                 <p>
                     <label for="nama">Nama</label><br>
                     <input type="text" id="nama" name="nama" required>

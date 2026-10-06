@@ -30,52 +30,66 @@ $stmt->execute();
 $daftarAnggota = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $totalPages = max(1, (int) ceil($totalRows / $perPage));
 ?>
-<section>
-    <h2>Daftar Anggota</h2>
+        <section>
+            <h2>Daftar Anggota</h2>
 
-    <?php if ($flash): ?>
-        <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo $flash['pesan']; ?></p>
-    <?php endif; ?>
+            <?php if ($flash): ?>
+                <p class="flash flash-<?php echo $flash['type']; ?>"><?php echo $flash['pesan']; ?></p>
+            <?php endif; ?>
 
-    <div class="search-box">
-        <label for="search-input">Cari Nama Anggota</label>
-        <input type="text" id="search-input" name="q" value="<?php echo e($keyword); ?>" placeholder="Ketik nama anggota...">
-    </div>
+            <div class="search-box">
+                <form method="get" action="list.php">
+                    <span>
+                        <label for="search-input">Cari Nama Anggota</label><br>
+                        <input type="text" id="search-input" name="q" value="<?php echo e($keyword); ?>" placeholder="Ketik nama anggota...">
+                    </span>
+                    <button type="submit">Cari</button>
+                </form>
+            </div>
 
-    <div class="table-responsive">
-        <table>
-            <thead>
-                <tr>
-                    <th>No. Anggota</th>
-                    <th>Nama</th>
-                    <th>Alamat</th>
-                    <th>No. HP</th>
-                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-                        <th>Aksi</th>
-                    <?php endif; ?>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($daftarAnggota as $row): ?>
+            <div class="table-responsive">
+            <table>
+                <thead>
                     <tr>
-                        <td><?php echo e($anggota['no_anggota']); ?></td>
-                        <td><?php echo e($anggota['nama']); ?></td>
-                        <td><?php echo e($anggota['alamat']); ?></td>
-                        <td><?php echo e($anggota['no_hp']); ?></td>
-                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                        <th>No. Anggota</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>No. HP</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (empty($daftarAnggota)): ?>
+                    <tr>
+                        <td colspan="5">Tidak ada data anggota yang cocok.</td>
+                    </tr>
+                    <?php else: ?>
+                        <?php foreach ($daftarAnggota as $anggota): ?>
+                        <tr>
+                            <td><?php echo e($anggota['no_anggota']); ?></td>
+                            <td><?php echo e($anggota['nama']); ?></td>
+                            <td><?php echo e($anggota['alamat']); ?></td>
+                            <td><?php echo e($anggota['no_hp']); ?></td>
                             <td>
-                                <a href="edit.php?id=<?= $row['id']; ?>">Edit</a>
-                                <form action="hapus.php" method="post" style="display:inline;"
-                                    onsubmit="return confirm('Yakin hapus?');">
-                                    <input type="hidden" name="id" value="<?= $row['id']; ?>">
-                                    <button type="submit">Hapus</button>
+                                <a href="edit.php?id=<?php echo $anggota['id']; ?>" class="btn-edit">Edit</a>
+                                <form class="form-hapus" method="post" action="hapus.php">
+                                    <input type="hidden" name="id" value="<?php echo $anggota['id']; ?>">
+                                    <?php echo csrf_field(); ?>
+                                    <button type="submit" class="btn-hapus">Hapus</button>
                                 </form>
                             </td>
-                        <?php endif; ?>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-</section>
+                        </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+            </div>
+
+            <nav class="pagination">
+                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                <a href="list.php?page=<?php echo $i; ?><?php echo $keyword !== '' ? '&q=' . urlencode($keyword) : ''; ?>"
+                   class="<?php echo $i === $page ? 'active' : ''; ?>"><?php echo $i; ?></a>
+                <?php endfor; ?>
+            </nav>
+        </section>
 <?php include __DIR__ . '/../includes/footer.php'; ?>
