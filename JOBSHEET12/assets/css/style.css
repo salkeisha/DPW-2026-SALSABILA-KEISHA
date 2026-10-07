@@ -339,3 +339,28 @@ footer {
         max-width: 100%;
     }
 }
+
+/* Gaya untuk wadah card */
+.card-container {
+    display: flex;             
+    justify-content: space-between; 
+    gap: 20px;                 
+    width: 100%;
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1;                  
+    background-color: #f2f6f9; 
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+}
+
+.card p {
+    font-size: 2em;
+    font-weight: bold;
+    color: #1a5276; 
+    margin: 10px 0 0 0;
+}
