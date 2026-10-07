@@ -5,10 +5,10 @@ require __DIR__ . '/../includes/koneksi.php';
 
 csrf_verify();
 
-if ($_SESSION['role'] !== 'admin') {
-    header('Location: ../index.php');
-    exit;
-}
+// if ($_SESSION['role'] !== 'admin') {
+//     header('Location: ../index.php');
+//     exit;
+// }
 
 $nama = trim($_POST['nama'] ?? '');
 $noAnggota = trim($_POST['no_anggota'] ?? '');
