@@ -164,15 +164,23 @@ td a.btn-hapus {
     color: #fff;
 }
 
-td a.btn-edit, a.btn-hapus {
-    display: inline-block;
-    width: 75px;  
-    padding: 6px 0;
+.btn-edit, 
+.btn-hapus {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 75px !important;
+    height: 35px !important;
+    padding: 0 !important; 
     margin-right: 0.35rem;
     border-radius: 4px;
-    font-size: 0.85rem;
-    text-align: center;    
+    font-size: 0.85rem !important; 
+    font-weight: 500;
+    text-decoration: none;
+    border: none !important;
     box-sizing: border-box;
+    cursor: pointer;
+    font-family: inherit;
 }
 
 td form.form-hapus {
