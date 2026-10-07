@@ -149,17 +149,20 @@ td a.btn-edit {
     color: #fff;
 }
 
-td button:last-of-type {
-    background-color: #d9534f;
+td a.btn-hapus {
+    background-color: #e02929;
     color: #fff;
 }
 
-td a.btn-edit {
+td a.btn-edit, a.btn-hapus {
     display: inline-block;
-    padding: 0.35rem 0.7rem;
+    width: 75px;  
+    padding: 6px 0;
     margin-right: 0.35rem;
     border-radius: 4px;
     font-size: 0.85rem;
+    text-align: center;    
+    box-sizing: border-box;
 }
 
 td form.form-hapus {
@@ -169,8 +172,8 @@ td form.form-hapus {
 /* ===== Pagination ===== */
 .pagination {
     display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    gap: 10px;
+    align-items: center;
 }
 
 .pagination a {
@@ -178,6 +181,12 @@ td form.form-hapus {
     border: 1px solid #cdd4da;
     border-radius: 4px;
     color: #1d5b8a;
+}
+
+.pagination-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
 }
 
 .pagination a.active {

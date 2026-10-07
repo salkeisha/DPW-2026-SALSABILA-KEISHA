@@ -7,6 +7,12 @@ $totalBuku = $pdo->query("SELECT COUNT(*) FROM buku")->fetchColumn();
 $totalAnggota = $pdo->query("SELECT COUNT(*) FROM anggota")->fetchColumn();
 $totalDipinjam = $pdo->query("SELECT COUNT(*) FROM peminjaman WHERE status = 'dipinjam'")->fetchColumn();
 ?>
+
+<section>
+    <h2>Selamat Datang di Sistem Perpustakaan Mini</h2>
+    <p>Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
+</section>
+
 <section class="ringkasan-section">
     <h2 class="ringkasan-judul">Ringkasan</h2>
     <div class="card-container">
