@@ -6,14 +6,14 @@
 }
 
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #2b2b2b;
     background-color: #f5f6f8;
     line-height: 1.5;
 }
 
 a {
-    color: #1d5b8a;
+    color: #af3a22;
     text-decoration: none;
 }
 
@@ -23,7 +23,7 @@ a:hover {
 
 /* ===== Header & Navbar (Flexbox) ===== */
 header {
-    background-color: #1d5b8a;
+    background-color: #af3a22;
     color: #fff;
     padding: 1rem 1.5rem;
     display: flex;
@@ -106,7 +106,7 @@ main section:nth-of-type(2) article h3 {
 main section:nth-of-type(2) article p {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1d5b8a;
+    color: #af3a22;
 }
 
 /* ===== Tabel ===== */
@@ -122,7 +122,7 @@ th, td {
 }
 
 thead {
-    background-color: #1d5b8a;
+    background-color: #af3a22;
     color: #fff;
 }
 
@@ -190,9 +190,9 @@ td form.form-hapus {
 }
 
 .pagination a.active {
-    background-color: #1d5b8a;
+    background-color: #af3a22;
     color: #fff;
-    border-color: #1d5b8a;
+    border-color: #af3a22;
 }
 
 .search-box form {
@@ -205,7 +205,7 @@ td form.form-hapus {
     padding: 0.55rem 1.2rem;
     border: none;
     border-radius: 4px;
-    background-color: #1d5b8a;
+    background-color: #af3a22;
     color: #fff;
     cursor: pointer;
 }
@@ -233,7 +233,7 @@ form select {
 }
 
 form button[type="submit"] {
-    background-color: #1d5b8a;
+    background-color: #af3a22;
     color: #fff;
     border: none;
     padding: 0.6rem 1.5rem;
@@ -243,7 +243,7 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
-    background-color: #164869;
+    background-color: #6b2315;
 }
 
 /* ===== Footer ===== */
@@ -374,6 +374,6 @@ footer {
 .card p {
     font-size: 2em;
     font-weight: bold;
-    color: #1a5276; 
+    color: #45170e; 
     margin: 10px 0 0 0;
 }
