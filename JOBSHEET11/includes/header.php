@@ -1,7 +1,15 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
+    // Samakan pengaturan cookie dengan yang ada di proses_login.php
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path' => '/',
+        'httponly' => true,
+        'samesite' => 'Lax'
+    ]);
     session_start();
 }
+
 require_once __DIR__ . '/helpers.php';
 require_once __DIR__ . '/csrf.php';
 $sudahLogin = isset($_SESSION['user_id']);
