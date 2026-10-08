@@ -13,22 +13,23 @@ $totalDipinjam = $pdo->query("SELECT COUNT(*) FROM peminjaman WHERE status = 'di
     <p>Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
 </section>
 
-<section class="ringkasan-section">
-    <h2>Ringkasan</h2>
-    <div class="card-container">
-        <article>
-            <h3>Total Buku</h3>
-            <p><?php echo $totalBuku; ?></p>
+<section style="display: block; width: 100%; background-color: #fff; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+    <h2 style="display: block; margin-bottom: 20px; color: #540505;">Ringkasan</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%;">
+        <article style="background-color: #eef4fa; border-radius: 8px; padding: 1.25rem; text-align: center;">
+            <h3 style="font-size: 0.95rem; color: #55677a; margin: 0 0 0.5rem 0;">Total Buku</h3>
+            <p style="font-size: 1.8rem; font-weight: 700; color: #af3a22; margin: 0;"><?php echo $totalBuku; ?></p>
         </article>
-
-        <article>
-            <h3>Total Anggota</h3>
-            <p><?php echo $totalAnggota; ?></p>
+        
+        <article style="background-color: #eef4fa; border-radius: 8px; padding: 1.25rem; text-align: center;">
+            <h3 style="font-size: 0.95rem; color: #55677a; margin: 0 0 0.5rem 0;">Total Anggota</h3>
+            <p style="font-size: 1.8rem; font-weight: 700; color: #af3a22; margin: 0;"><?php echo $totalAnggota; ?></p>
         </article>
-
-        <article>
-            <h3>Sedang Dipinjam</h3>
-            <p><?php echo $totalDipinjam; ?></p>
+        
+        <article style="background-color: #eef4fa; border-radius: 8px; padding: 1.25rem; text-align: center;">
+            <h3 style="font-size: 0.95rem; color: #55677a; margin: 0 0 0.5rem 0;">Sedang Dipinjam</h3>
+            <p style="font-size: 1.8rem; font-weight: 700; color: #af3a22; margin: 0;"><?php echo $totalDipinjam; ?></p>
         </article>
     </div>
 </section>
