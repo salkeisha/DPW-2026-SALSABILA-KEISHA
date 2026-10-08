@@ -100,7 +100,7 @@ section h2 {
     gap: 1rem;
 } */
 
-main section:nth-of-type(2) article {
+/* main section:nth-of-type(2) article {
     background-color: #eef4fa;
     border-radius: 8px;
     padding: 1.25rem;
@@ -117,7 +117,7 @@ main section:nth-of-type(2) article p {
     font-size: 1.8rem;
     font-weight: 700;
     color: #af3a22;
-}
+} */
 
 /* ===== Tabel ===== */
 table {
