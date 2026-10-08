@@ -84,14 +84,14 @@ section h2 {
 }
 
 .ringkasan-section {
-    display: flex;
-    flex-direction: column; 
-    gap: 15px;            
-    width: 100%;           
+    display: block !important; 
+    width: 100% !important;
 }
 
 .ringkasan-section h2 {
-    margin: 0; 
+    display: block !important;
+    margin-bottom: 20px !important;
+    text-align: left !important;
 }
 
 /* main section:nth-of-type(2) {
@@ -374,18 +374,19 @@ footer {
 
 /* Gaya untuk wadah card */
 .card-container {
-    display: grid;             
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;                 
-    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
 }
 
-.card {                  
-    background-color: #f2f6f9; 
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+.card {
+    background-color: #f2f6f9 !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+    width: auto !important;
 }
 
 .card p {
