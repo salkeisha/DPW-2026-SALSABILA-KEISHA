@@ -374,15 +374,13 @@ footer {
 
 /* Gaya untuk wadah card */
 .card-container {
-    display: flex;             
-    justify-content: space-between; 
+    display: grid;             
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;                 
     width: 100%;
-    margin-top: 20px;
 }
 
-.card {
-    flex: 1;                  
+.card {                  
     background-color: #f2f6f9; 
     padding: 20px;
     border-radius: 8px;
@@ -395,4 +393,10 @@ footer {
     font-weight: bold;
     color: #45170e; 
     margin: 10px 0 0 0;
+}
+
+.card h3 {
+    font-size: 0.95rem;
+    color: #55677a;
+    margin-bottom:
 }
