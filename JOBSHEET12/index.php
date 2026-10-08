@@ -13,23 +13,19 @@ $totalDipinjam = $pdo->query("SELECT COUNT(*) FROM peminjaman WHERE status = 'di
     <p>Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
 </section>
 
-<section class="ringkasan-section">
-    <h2 class="ringkasan-judul">Ringkasan</h2>
-    <div class="card-container">
-        <article class="card">
-            <h3>Total Buku</h3>
-            <p><?php echo $totalBuku; ?></p>
-        </article>
-
-        <article class="card">
-            <h3>Total Anggota</h3>
-            <p><?php echo $totalAnggota; ?></p>
-        </article>
-
-        <article class="card">
-            <h3>Sedang Dipinjam</h3>
-            <p><?php echo $totalDipinjam; // Sesuaikan dengan variabelmu ?></p>
-        </article>
-    </div>
+<section>
+    <h2>Ringkasan</h2>
+    <article>
+        <h3>Total Buku</h3>
+        <p><?php echo $totalBuku; ?></p>
+    </article>
+    <article>
+        <h3>Total Anggota</h3>
+        <p><?php echo $totalAnggota; ?></p>
+    </article>
+    <article>
+        <h3>Sedang Dipinjam</h3>
+        <p><?php echo $totalDipinjam; ?></p>
+    </article>
 </section>
 <?php include __DIR__ . '/includes/footer.php'; ?>
