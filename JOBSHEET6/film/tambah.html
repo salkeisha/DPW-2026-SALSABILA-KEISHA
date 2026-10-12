@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CineTrack | Tambah Tontonan</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="mobile-topbar">
+        <h2>Cine<span>Track</span></h2>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+    </div>
+
+    <header class="sidebar">
+        <div class="brand">
+            <span class="brand-icon">🎬</span>
+            <h1>Cine<span>Track</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-section-title">Menu Utama</li>
+                <li><a href="../index.html">🏠 Beranda</a></li>
+                <li class="nav-section-title">Katalog Tontonan</li>
+                <li><a href="list.html">🎞️ Daftar Tontonan</a></li>
+                <li><a href="tambah.html" class="active">➕ Tambah Tontonan</a></li>
+                <li class="nav-section-title">Catatan & Ulasan</li>
+                <li><a href="../watchlist/list.html">📝 Daftar Review</a></li>
+                <li><a href="../watchlist/tambah.html">✍️ Tulis Review</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <main>
+            <section>
+                <h2>Catat Tontonan Baru</h2>
+                <p class="desc">Masukkan informasi film atau series yang baru saja kamu selesaikan.</p>
+
+                <form id="form-tambah">
+                    <p>
+                        <label for="judul">Judul Film / Series</label>
+                        <input type="text" id="judul" name="judul" placeholder="Contoh: Dune: Part Two" required>
+                    </p>
+                    <p>
+                        <label for="sutradara">Sutradara / Showrunner</label>
+                        <input type="text" id="sutradara" name="sutradara" placeholder="Contoh: Denis Villeneuve" required>
+                    </p>
+                    <p>
+                        <label for="tahun">Tahun Rilis</label>
+                        <input type="number" id="tahun" name="tahun" min="1900" max="2026" placeholder="2024" required>
+                    </p>
+                    <p>
+                        <label for="tipe">Tipe Tontonan</label>
+                        <select id="tipe" name="tipe">
+                            <option value="Movie">Movie (Layar Lebar)</option>
+                            <option value="Series">TV Series</option>
+                            <option value="Anime">Anime</option>
+                            <option value="Dokumenter">Dokumenter</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="rating">Rating Pribadi (Skala 1 - 10)</label>
+                        <input type="number" step="0.1" id="rating" name="rating" min="1" max="10" placeholder="Contoh: 9.0" required>
+                    </p>
+                    <p>
+                        <label for="platform">Platform Menonton</label>
+                        <input type="text" id="platform" name="platform" placeholder="Contoh: Netflix / Bioskop XXI / Disney+">
+                    </p>
+                    <p>
+                        <button type="submit">Simpan ke Watchlist</button>
+                    </p>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 CineTrack &mdash; Personal Movie & Series Watchlist</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

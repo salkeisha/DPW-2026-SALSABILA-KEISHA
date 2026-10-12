@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CineTrack | Tulis Review</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="mobile-topbar">
+        <h2>Cine<span>Track</span></h2>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+    </div>
+
+    <header class="sidebar">
+        <div class="brand">
+            <span class="brand-icon">🎬</span>
+            <h1>Cine<span>Track</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-section-title">Menu Utama</li>
+                <li><a href="../index.html">🏠 Beranda</a></li>
+                <li class="nav-section-title">Katalog Tontonan</li>
+                <li><a href="../film/list.html">🎞️ Daftar Tontonan</a></li>
+                <li><a href="../film/tambah.html">➕ Tambah Tontonan</a></li>
+                <li class="nav-section-title">Catatan & Ulasan</li>
+                <li><a href="list.html">📝 Daftar Review</a></li>
+                <li><a href="tambah.html" class="active">✍️ Tulis Review</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <main>
+            <section>
+                <h2>Tulis Review Baru</h2>
+                <p class="desc">Dokumentasikan kesan, opini, atau analisis kamu terhadap film/series.</p>
+
+                <form id="form-tambah">
+                    <p>
+                        <label for="judul">Judul Film / Series</label>
+                        <input type="text" id="judul" name="judul" placeholder="Judul yang ingin direview" required>
+                    </p>
+                    <p>
+                        <label for="tanggal">Tanggal Ditonton</label>
+                        <input type="date" id="tanggal" name="tanggal" required>
+                    </p>
+                    <p>
+                        <label for="catatan">Catatan / Ulasan Pribadi</label>
+                        <textarea id="catatan" name="catatan" placeholder="Tuliskan pendapat kamu tanpa takut spoiler..."></textarea>
+                    </p>
+                    <p>
+                        <button type="submit">Simpan Review</button>
+                    </p>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 CineTrack &mdash; Personal Movie & Series Watchlist</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

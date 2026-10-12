@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CineTrack | Daftar Tontonan</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="mobile-topbar">
+        <h2>Cine<span>Track</span></h2>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+    </div>
+
+    <header class="sidebar">
+        <div class="brand">
+            <span class="brand-icon">🎬</span>
+            <h1>Cine<span>Track</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-section-title">Menu Utama</li>
+                <li><a href="../index.html">🏠 Beranda</a></li>
+                <li class="nav-section-title">Katalog Tontonan</li>
+                <li><a href="list.html" class="active">🎞️ Daftar Tontonan</a></li>
+                <li><a href="tambah.html">➕ Tambah Tontonan</a></li>
+                <li class="nav-section-title">Catatan & Ulasan</li>
+                <li><a href="../watchlist/list.html">📝 Daftar Review</a></li>
+                <li><a href="../watchlist/tambah.html">✍️ Tulis Review</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <main>
+            <section>
+                <h2>Koleksi Film & Serial Selesai Ditonton</h2>
+                <p class="desc">Kelola dan cari judul yang sudah masuk ke dalam daftar tontonan kamu.</p>
+
+                <div class="search-box">
+                    <label for="search-input">Cari Judul / Sutradara / Platform</label>
+                    <input type="text" id="search-input" placeholder="Ketik kata kunci...">
+                </div>
+
+                <p id="loading-indicator" style="display:none;">Memuat data tontonan...</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Judul</th>
+                                <th>Tipe</th>
+                                <th>Sutradara / Kreator</th>
+                                <th>Tahun</th>
+                                <th>Rating</th>
+                                <th>Platform</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 CineTrack &mdash; Personal Movie & Series Watchlist</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/film.js"></script>
+</body>
+</html>

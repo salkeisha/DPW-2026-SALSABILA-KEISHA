@@ -1,354 +1,352 @@
-/* ==========================================
-   1. VARIABLE & RESET
-   ========================================== */
-:root {
-    --bg-main: #121212;
-    --bg-surface: #1e1e1e;
-    --bg-card: #282828;
-    --primary-yellow: #f5c518;
-    --primary-hover: #e0b20d;
-    --text-main: #ffffff;
-    --text-muted: #aaaaaa;
-    --border-color: #383838;
-    --danger-red: #ff4d4d;
-    --success-green: #2ecc71;
-}
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
 }
 
+/* Gaya Dasar */
 body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    line-height: 1.6;
-    padding-bottom: 40px;
+    /* font diurutkan berdasarkan prioritas */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* Warna Teks */
+    color: #2b2b2b;
+    /* Warna Background/Latar Belakang */
+    background-color: #f5f6f8;
+    /* Jarak antar teks */
+    line-height: 1.5;
 }
 
+/* Semua tautan diberi warna biru (menggantikan warna biru browser */
 a {
-    color: var(--primary-yellow);
+    color: #530a0b;
+    /* Menghilangkan underline dari tautan agar bersih */
     text-decoration: none;
-    transition: 0.2s;
 }
 
+/* Agar underline baru muncul saat diarahkan ke atas tautan */
 a:hover {
-    color: var(--primary-hover);
+    text-decoration: underline;
 }
 
-/* ==========================================
-   2. HEADER & NAVIGATION
-   ========================================== */
 header {
-    background-color: var(--bg-surface);
-    border-bottom: 2px solid var(--primary-yellow);
-    padding: 1rem 2rem;
+    background-color: #530a0b;
+    color: #fff;
+    /* nilai pertama: atas-bawah, nilai kedua: kanan-kiri */
+    padding: 1rem 1.5rem;
+    /* Flex mengubah agar anak dari header menjadi flex container dan tersusun secara horizontal */
     display: flex;
-    justify-content: space-between;
+    /* Menyejajarkan flex item secara vertikan di tengah meski tinggi berbeda */
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    /* Mendorong item pertama menempel di ujung kiri dan item terakhir di ujung kanan */
+    justify-content: space-between;
+    /* Mengizinkan flex item pindah ke baris baru kalau ruang tidak cukup */
+    flex-wrap: wrap;
 }
 
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-yellow);
-    letter-spacing: 1px;
+header h1 {
+    font-size: 1.4rem;
 }
 
+/* Untuk menyusun item-item menu */
 header nav ul {
-    display: flex;
+    /* Mengapus titik per item */
     list-style: none;
-    gap: 1.5rem;
+    /* Menu menjadi horizontal */
+    display: flex;
+    /* Memberi jarak seragam antar item */
+    gap: 1.25rem;
 }
 
+/* Menimpa warna tautan bawaan khusus untuk tautan yang ada di navbar */
 header nav a {
-    color: var(--text-main);
+    color: #fff;
     font-weight: 500;
 }
 
-header nav a:hover, header nav a.active {
-    color: var(--primary-yellow);
-    border-bottom: 2px solid var(--primary-yellow);
-    padding-bottom: 4px;
-}
-
-/* ==========================================
-   3. HERO BANNER & BUTTONS
-   ========================================== */
-.hero-banner {
-    background: linear-gradient(135deg, #1e1e1e 0%, #2b2600 100%);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2.5rem;
+/* Main Layout */
+main {
+    max-width: 1000px;
+    /* auto berarti sistem akan menengahkan elemen secara horizontal */
     margin: 2rem auto;
-    max-width: 1100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    padding: 0 1.5rem;
 }
 
-.banner-content h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+section {
+    /* Latar putih untuk setiap section */
+    background-color: #fff;
+    /* Sudut kotak melengkung */
+    border-radius: 8px;
+    /* jika satu nilai aja berarti untuk semua (atas bawah kanan kiri sama) */
+    padding: 1.5rem;
+    /* jarak bawah tiap kartu */
+    margin-bottom: 1.5rem;
+    /* buat bayangan tiap kartu, 0: untuk kanan/kirinya, 1px: untuk jarak bayangan bawahnya dari kartu, 3px: blurnya */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.banner-content h2 span {
-    color: var(--primary-yellow);
+/* Untuk setiap judul dalam section */
+section h2 {
+    margin-bottom: 1rem;
+    color: #530a0b;
 }
 
-.banner-content p {
-    color: var(--text-muted);
-}
-
-.banner-actions {
-    display: flex;
+/* Kartu Statistik */
+/* nth-of-type(2): section yg kedua */
+main section:nth-of-type(2) {
+    /* anak-anaknya langsung jadi grid */
+    display: grid;
+    /* 3 kolom lebarnya sama-sama 1fr */
+    grid-template-columns: repeat(4, 1fr);
+    /* jarak antar kolom */
     gap: 1rem;
 }
 
-/* Button Styles */
-.btn {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    transition: all 0.2s ease;
+main section:nth-of-type(2) h2 {
+  grid-column: 1 / -1; 
+}
+
+/* styling setiap kartu (tiap article) */
+main section:nth-of-type(2) article {
+    background-color: #eef4fa;
+    border-radius: 8px;
+    padding: 1.25rem;
     text-align: center;
+}
+
+/* style article h3/judul kecil */
+main section:nth-of-type(2) article h3 {
     font-size: 0.95rem;
+    color: #55677a;
+    margin-bottom: 0.5rem;
 }
 
-.btn-primary {
-    background-color: var(--primary-yellow);
-    color: #000000;
+/* style paragrafnya (konteks disini angkanya) */
+main section:nth-of-type(2) article p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #530a0b;
 }
 
-.btn-primary:hover {
-    background-color: var(--primary-hover);
-    color: #000000;
+/* Tabel */
+table {
+    /* lebar tabel, tabel melebar memenuhi kotaknya */
+    width: 100%;
+    /* agar baris antar batas antar sel digabung menjadi satu */
+    border-collapse: collapse;
 }
 
-.btn-outline {
-    background-color: transparent;
-    border: 1px solid var(--primary-yellow);
-    color: var(--primary-yellow);
+/* diterapkan ke kedua jenis sel sekaligus */
+th, td {
+    /* rata kiri karena set awal th biasanya rata tengah */
+    text-align: center;
+    padding: 0.65rem 0.75rem;
+    /* garis tipis di bagian bawah tiap sel */
+    border-bottom: 1px solid #e2e6ea;
 }
 
-.btn-outline:hover {
-    background-color: var(--primary-yellow);
-    color: #000000;
+/* header tabel */
+thead {
+    background-color: #530a0b;
+    color: #fff;
+    text-align: center;
 }
 
-.btn-secondary {
-    background-color: #333333;
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
+/* khusus baris genap */
+tbody tr:nth-child(even) {
+    background-color: #f7f9fb;
 }
 
-.btn-secondary:hover {
-    background-color: #444444;
+/* saat kursor diarahkan ke sebuah baris maka baris berubah warnanya */
+tbody tr:hover {
+    background-color: #eef4fa;
 }
 
-.btn-hapus {
-    background-color: #3a1c1c;
-    color: #ff6b6b;
-    border: 1px solid #5a2525;
-    padding: 0.4rem 0.8rem;
+/* untuk tombol edit dan hapus */
+td button {
+    padding: 0.35rem 0.7rem;
+    /* jarak kanan tiap tombol agar tidak aling menempel */
+    margin-right: 0.35rem;
+    /* menghapus border bawaan html */
+    border: none;
+    border-radius: 4px;
+    /* mengubah bentuk kursor menjadi ikon tangan menunjuk saat diatas tombol */
+    cursor: pointer;
     font-size: 0.85rem;
 }
 
-.btn-hapus:hover {
-    background-color: var(--danger-red);
-    color: #ffffff;
+/* tombol pertama */
+/* td button:first-of-type {
+    background-color: #f0ad4e;
+    color: #fff;
+} */
+
+/* tombol terakhir */
+/* td button:last-of-type {
+    background-color: #d9534f;
+    color: #fff;
+} */
+
+td button.btn-edit {
+    background-color: #f0ad4e;
+    color: #fff;
 }
 
-/* ==========================================
-   4. DASHBOARD STATS CARDS
-   ========================================== */
-.dashboard-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto 2.5rem auto;
-    padding: 0 1rem;
+td button.btn-detail {
+    background-color: #d2a510;
+    color: #fff;
 }
 
-.stat-card {
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 1.5rem;
-    transition: transform 0.2s, border-color 0.2s;
+td button.btn-hapus {
+    background-color: #d9534f;
+    color: #fff;
 }
 
-.stat-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--primary-yellow);
+/* form */
+/* memberi jarak per p */
+form p {
+    margin-bottom: 1rem;
 }
 
-.stat-card.card-highlight {
-    border-left: 4px solid var(--primary-yellow);
-}
-
-.stat-label {
+form label {
+    /* memaksa label selalu memenuhi satu baris penuh */
     display: block;
-    color: var(--text-muted);
+    /* jarak (bawah) antar teks label */
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    color: #444;
+}
+
+form input,
+form select {
+    width: 100%;
+    /* lebar input mengikuti lebar kotak pembungkusnya tapi tidak melebihi 400px */
+    max-width: 400px;
+    padding: 0.55rem 0.7rem;
+    /* border tipis, menggantikan border bawaan */
+    border: 1px solid #cdd4da;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* tombol submit */
+form button[type="submit"] {
+    background-color: #530a0b;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.0rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* mengubah warna tombol menjadi lebih gelap saat kursor mendekat */
+form button[type="submit"]:hover {
+    background-color: #160203;
+}
+
+/* Footer */
+footer {
+    /* teks diratakan ke tengah halaman */
+    text-align: center;
+    /* jarak seragam di ke 4 sisi */
+    padding: 1.25rem;
+    color: #7a8794;
     font-size: 0.9rem;
 }
 
-.stat-value {
-    display: block;
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: var(--primary-yellow);
-    margin: 0.2rem 0;
+/* Hamburger Menu (checkbox hack)
+.nav-toggle {
+    display: none;
+} */
+
+.nav-toggle-label {
+    display: none; /* disembunyikan di layar besar */
+    font-size: 1.6rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.stat-sub {
-    font-size: 0.8rem;
-    color: #777777;
-}
-
-/* ==========================================
-   5. TABLE & LAYOUT
-   ========================================== */
-.content-container, .recent-watchlist {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.section-header p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.table-container {
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
+/* Tabel Responsif  */
+.table-responsive {
     overflow-x: auto;
 }
 
-.data-table {
+/* layar tablet ke bawah */
+@media (max-width: 900px) {
+    main-section:nth-of-type(2) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* layar mobile */
+@media (max-width: 480px) {
+    header {
+        position: relative;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 1rem;
+    }
+
+    header nav.nav-open {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    main section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+
+    form input,
+    form select {
+        max-width: 100%;
+    }
+}
+
+/* Tambahan Modifikasi */
+@media (min-width: 1400px) {
+    main {
+        max-width: 1200px;
+    }
+}
+
+.scroll-x-auto {
     width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+    overflow-x: auto;
 }
 
-.data-table th, .data-table td {
-    padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.data-table th {
-    background-color: #161616;
-    color: var(--primary-yellow);
-    font-weight: 600;
-}
-
-.data-table tbody tr:hover {
-    background-color: var(--bg-card);
-}
-
-/* Badges & Tags */
-.tag-platform {
-    background-color: #333333;
-    color: #ffffff;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    border: 1px solid #555555;
-    display: inline-block;
-}
-
-.status-badge {
-    padding: 0.25rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    display: inline-block;
-}
-
-.status-badge.daftar-tunggu {
-    background-color: #3a3200;
-    color: #ffe600;
-}
-
-.status-badge.sedang-ditonton {
-    background-color: #002b49;
-    color: #38b6ff;
-}
-
-.status-badge.selesai {
-    background-color: #0f3818;
-    color: #43df6a;
-}
-
-/* ==========================================
-   6. FORMS & VALIDATION
-   ========================================== */
-form {
-    background-color: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 2rem;
-    max-width: 600px;
-    margin: 2rem auto;
-}
-
-form h2 {
-    color: var(--primary-yellow);
-}
-
-form p {
-    margin-bottom: 1.2rem;
-}
-
-label {
-    display: inline-block;
-    margin-bottom: 0.4rem;
-    color: var(--text-main);
-    font-weight: 500;
-}
-
-input[type="text"],
-input[type="number"],
-select,
-textarea {
-    width: 100%;
-    padding: 0.7rem;
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    color: var(--text-main);
-    font-size: 0.95rem;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--primary-yellow);
-}
-
-/* Error JS */
-span.error {
-    color: var(--danger-red);
-    font-size: 0.85rem;
+/* Pesan error validasi */
+.error {
     display: block;
-    margin-top: 0.3rem;
+    color: #d9534f;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
 }
+
+/* Kolom Pencarian */
+.search-box {
+    margin-bottom: 1rem;
+}
+
+.search-box input {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #cdd4da;
+    border-radius: 4px;
+}
+
+

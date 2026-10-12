@@ -3,61 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIMPUS-Mini | Beranda</title>
-    <!-- Penambahan kode untuk menghubungkan antara file html dengan css -->
+    <title>CineTrack | Beranda</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header> 
-        <!-- Judul Utama Aplikasi, h1 adalah header level tertinggi -->
-        <h1>SIMPUS-Mini</h1>
-        <!-- Dirbah karena status bua/tutupu menu sekrang disimpan lewat class css yang ditambahkan JS -->
+    <!-- Mobile Topbar -->
+    <div class="mobile-topbar">
+        <h2>Cine<span>Track</span></h2>
         <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+    </div>
+
+    <!-- Sidebar Samping -->
+    <header class="sidebar">
+        <div class="brand">
+            <span class="brand-icon">🎬</span>
+            <h1>Cine<span>Track</span></h1>
+        </div>
         <nav>
-            <ul> 
-                <!-- Terdapat 4 navigasi di halaman utama -->
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="buku/list.html">Daftar Buku</a></li>
-                <li><a href="buku/tambah.html">Tambah Buku</a></li>
-                <li><a href="anggota/list.html">Daftar Anggota</a></li>
-                <li><a href="anggota/tambah.html">Tambah Anggota</a></li>
+            <ul>
+                <li class="nav-section-title">Menu Utama</li>
+                <li><a href="index.html" class="active">🏠 Beranda</a></li>
+                <li class="nav-section-title">Katalog Tontonan</li>
+                <li><a href="film/list.html">🎞️ Daftar Tontonan</a></li>
+                <li><a href="film/tambah.html">➕ Tambah Tontonan</a></li>
+                <li class="nav-section-title">Catatan & Ulasan</li>
+                <li><a href="watchlist/list.html">📝 Daftar Review</a></li>
+                <li><a href="watchlist/tambah.html">✍️ Tulis Review</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Konten utama -->
-    <main>
-        <section>
-            <h2>Selamat Datang di Sistem Perpustakaan Mini</h2>
-            <p>Aplikasi sederhana untuk mengelola data buku dan anggota perpustakaan.</p>
-        </section>
+    <div class="content-wrapper">
+        <main>
+            <section>
+                <h2>Halo, Selamat Datang di CineTrack! 👋</h2>
+                <p class="desc">Pantau rekap film, serial, dan anime yang sudah selesai kamu tonton lengkap beserta rating serta platformnya.</p>
+            </section>
 
-        <section>
-            <h2>Ringkasan</h2>
-            <!-- Article mewakili satu "kartu" statistik yang berdiri sendiri. -->
-            <article>
-                <h3>Total Buku</h3>
-                <p>12</p>
-            </article>
-            <article>
-                <h3>Total Anggota</h3>
-                <p>8</p>
-            </article>
-            <article>
-                <h3>Sedang Dipinjam</h3>
-                <p>3</p>
-            </article>
-            <article>
-                <h3>Buku Terlambat</h3>
-                <p>2</p>
-            </article>
-        </section>
-    </main>
+            <section class="stats-grid">
+                <h2>Statistik Tontonan</h2>
+                <article>
+                    <h3>Total Ditonton</h3>
+                    <p>42</p>
+                </article>
+                <article>
+                    <h3>Film Layar Lebar</h3>
+                    <p>28</p>
+                </article>
+                <article>
+                    <h3>Serial / TV Series</h3>
+                    <p>14</p>
+                </article>
+                <article>
+                    <h3>Ulasan Ditulis</h3>
+                    <p>19</p>
+                </article>
+            </section>
+        </main>
 
-    <footer>
-        <!-- &copy adalah simbol copyright dan &mdash adalah entity untuk tanda pisah panjang -->
-        <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
-    </footer>
+        <footer>
+            <p>&copy; 2026 CineTrack &mdash; Personal Movie & Series Watchlist</p>
+        </footer>
+    </div>
+
     <script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CineTrack | Daftar Review</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="mobile-topbar">
+        <h2>Cine<span>Track</span></h2>
+        <button type="button" id="nav-toggle-btn" class="nav-toggle-label" aria-label="Menu">&#9776;</button>
+    </div>
+
+    <header class="sidebar">
+        <div class="brand">
+            <span class="brand-icon">🎬</span>
+            <h1>Cine<span>Track</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-section-title">Menu Utama</li>
+                <li><a href="../index.html">🏠 Beranda</a></li>
+                <li class="nav-section-title">Katalog Tontonan</li>
+                <li><a href="../film/list.html">🎞️ Daftar Tontonan</a></li>
+                <li><a href="../film/tambah.html">➕ Tambah Tontonan</a></li>
+                <li class="nav-section-title">Catatan & Ulasan</li>
+                <li><a href="list.html" class="active">📝 Daftar Review</a></li>
+                <li><a href="tambah.html">✍️ Tulis Review</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <main>
+            <section>
+                <h2>Daftar Catatan & Review</h2>
+                <p class="desc">Kumpulan ulasan pribadi dan pemikiran setelah menonton.</p>
+
+                <div class="search-box">
+                    <label for="search-input">Cari Ulasan</label>
+                    <input type="text" id="search-input" placeholder="Cari berdasarkan judul atau isi review...">
+                </div>
+
+                <p id="loading-indicator" style="display:none;">Memuat ulasan...</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID Log</th>
+                                <th>Judul Tontonan</th>
+                                <th>Ulasan / Catatan</th>
+                                <th>Tanggal Nonton</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 CineTrack &mdash; Personal Movie & Series Watchlist</p>
+        </footer>
+    </div>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/review.js"></script>
+</body>
+</html>
